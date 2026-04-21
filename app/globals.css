@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+:root {
+  --color-gold: #e3d0a8;
+  --color-dark: #1a1a1a;
+  --color-muted: #4a4a4a;
+  --color-white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'avenir-lt-w01_35-light1475496', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: var(--color-dark);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'brandon-grot-w01-light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Wix fonts CDN */
+@font-face {
+  font-family: 'brandon-grot-w01-light';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://static.parastorage.com/fonts/v2/fe0edf38-314c-46d5-b570-a37546d197e4/v1/brandon-grot-w01-light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'avenir-lt-w01_35-light1475496';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://static.parastorage.com/fonts/v2/af36905f-3c92-4ef9-b0c1-f91432f16ac1/v1/avenir-lt-w01_35-light1475496.woff2') format('woff2');
+}
