@@ -1,7 +1,7 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { routing } from '../../i18n/routing';
+import { locales } from '../../i18n/routing';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import '../globals.css';
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }) {
 }
 
 export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
+  return locales.map((locale) => ({ locale }));
 }
 
 export default async function LocaleLayout({ children, params }) {
