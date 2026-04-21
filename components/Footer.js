@@ -60,7 +60,7 @@ export default function Footer({ locale }) {
             {isRo ? 'Politica GDPR' : 'Privacy Policy'}
           </Link>
           <Link
-            href="/gdpr"
+            href="/cookies"
             locale={locale}
             style={{
               display: 'inline-block',
