@@ -21,14 +21,6 @@ export async function generateMetadata({ params }) {
         'x-default': `${BASE}/ro/servicii`,
       },
     },
-    openGraph: {
-      title: isRo ? 'Servicii NEOFORT Bucuresti' : 'NEOFORT Services Bucharest',
-      description: isRo
-        ? 'Consultanta imobiliara, studii fezabilitate, proiectare, creditare, crowdfunding, tamplarie PVC.'
-        : 'Real estate consultancy, feasibility studies, design, financing, crowdfunding, PVC carpentry.',
-      url: `${BASE}/${locale}/${locale === 'ro' ? 'servicii' : 'services'}`,
-      type: 'website',
-    },
     robots: { index: true, follow: true },
   };
 }
@@ -40,51 +32,57 @@ export default async function ServiciiPage({ params }) {
   const services = [
     {
       title: isRo ? 'Consultanta Imobiliara' : 'Real Estate Consultancy',
+      subtitle: isRo ? 'Vanzari off-plan la preturi cu potential investitional' : 'Off-plan sales at investment potential prices',
       text: isRo
-        ? 'Oferim consultanta specializata in toate etapele unei tranzactii imobiliare — de la identificarea oportunitatilor de investitie, analiza de piata, negociere si pana la finalizarea contractelor. Experienta noastra de 21 de ani in piata imobiliara din Bucuresti garanteaza decizii informate si rezultate optime.'
-        : 'We provide specialized consultancy at all stages of a real estate transaction — from identifying investment opportunities, market analysis, negotiation to contract finalization. Our 21 years of experience in the Bucharest real estate market guarantees informed decisions and optimal results.',
+        ? 'In ultimii 5 ani portofoliul nostru de clienti a fost constituit din cumparatori si investitori ce ne-au acordat un vot consistent de incredere. Am atins rezultate remarcabile in zona vanzarilor off-plan. Majoritatea clientilor nostri au cumparat imobile la preturi discountate suficient de mult, incat multi dintre ei alegand revanzarea in detrimentul inchirierii.'
+        : 'Over the last 5 years our client portfolio has consisted of buyers and investors who gave us consistent trust. We achieved remarkable results in off-plan sales. Most clients purchased properties at sufficiently discounted prices that many chose resale over renting.',
       img: '/images/consultanta.avif',
       imgAlt: isRo ? 'NEOFORT consultanta imobiliara Bucuresti' : 'NEOFORT real estate consultancy Bucharest',
     },
     {
       title: isRo ? 'Studii de Fezabilitate' : 'Feasibility Studies',
+      subtitle: isRo ? 'Un proiect de succes se bazeaza pe profesionisti' : 'A successful project relies on professionals',
       text: isRo
-        ? 'Elaboram studii de fezabilitate complete pentru proiecte rezidentiale si comerciale. Analizam viabilitatea economica, tehnica si juridica a investitiei, oferind o imagine clara asupra rentabilitatii si riscurilor proiectului. Am realizat studii pentru 41 de ansambluri rezidentiale in ultimii 14 ani.'
-        : 'We prepare comprehensive feasibility studies for residential and commercial projects. We analyze the economic, technical and legal viability of the investment, providing a clear picture of project profitability and risks. We have completed studies for 41 residential complexes in the last 14 years.',
+        ? 'Oferim consultanta in managementul proiectului si studii de fezabilitate pentru dezvoltatori si investitori parteneri. Intr-o piata concurentiala, calculul si studiul atent legat de adresabilitatea si fezabilitatea economica a unui proiect, garanteaza intr-o masura decisiva succesul unei dezvoltari imobiliare. Mizam pe experienta acumulata in ultimii ani si marsam pe strategii preponderent prudentiale.'
+        : 'We provide project management consultancy and feasibility studies for developers and partner investors. In a competitive market, careful calculation and study of addressability and economic feasibility decisively guarantees the success of a real estate development.',
       img: '/images/fezabilitate.avif',
       imgAlt: isRo ? 'NEOFORT studii fezabilitate proiecte imobiliare' : 'NEOFORT feasibility studies real estate projects',
     },
     {
-      title: isRo ? 'Proiectare si Arhitectura' : 'Design and Architecture',
+      title: isRo ? 'Proiectare Arhitectura' : 'Architectural Design',
+      subtitle: isRo ? 'Solutii la cerinte complexe de proiectare' : 'Solutions for complex design requirements',
       text: isRo
-        ? 'Coordonam procesul de proiectare arhitecturala pentru ansambluri rezidentiale, de la conceptul initial pana la proiectul tehnic detaliat. Colaboram cu birouri de arhitectura de top pentru a crea locuinte moderne, eficiente energetic si cu o estetica urbana contemporana.'
-        : 'We coordinate the architectural design process for residential complexes, from initial concept to detailed technical project. We collaborate with top architecture firms to create modern, energy-efficient homes with contemporary urban aesthetics.',
+        ? 'Jucatorii cu experienta din piata dezvoltarilor imobiliare cunosc cel mai bine rolul proiectarii si arhitecturii intr-o viitoare dezvoltare imobiliara. Componentele cheie: atractivitate, versatilitate, legalitate, vandabilitate si continuitate. Toate acestea generate si garantate de o abordare profesionista bazata pe experienta si expertiza verificata in timp.'
+        : 'Experienced players in real estate development know best the role of design and architecture. Key components: attractiveness, versatility, legality, marketability and continuity. All generated and guaranteed by a professional approach based on time-tested experience.',
       img: '/images/arhitectura.avif',
       imgAlt: isRo ? 'NEOFORT proiectare arhitectura ansambluri rezidentiale' : 'NEOFORT architectural design residential complexes',
     },
     {
-      title: isRo ? 'Creditare Bancara si Nebancara' : 'Bank and Non-Bank Financing',
-      text: isRo
-        ? 'Facilitam accesul la finantare bancara si nebancara pentru achizitia de locuinte sau pentru investitii imobiliare. Colaboram cu principalele institutii financiare din Romania pentru a identifica cele mai avantajoase solutii de creditare adaptate nevoilor fiecarui client.'
-        : 'We facilitate access to bank and non-bank financing for home purchases or real estate investments. We collaborate with the main financial institutions in Romania to identify the most advantageous financing solutions tailored to each client.',
-      img: '/images/creditare.avif',
-      imgAlt: isRo ? 'NEOFORT creditare bancara imobiliara Bucuresti' : 'NEOFORT bank financing real estate Bucharest',
-    },
-    {
       title: isRo ? 'Finantare prin Crowdfunding' : 'Crowdfunding Financing',
+      subtitle: isRo ? 'O creditare inteligenta bazata pe principii de equity' : 'Intelligent financing based on equity principles',
       text: isRo
-        ? 'Oferim solutii inovatoare de finantare prin crowdfunding imobiliar, permitand investitii accesibile in proiecte rezidentiale de calitate. Platforma noastra conecteaza investitori cu proiecte validate, transparente si cu randamente competitive pe piata imobiliara romaneasca.'
-        : 'We offer innovative real estate crowdfunding financing solutions, enabling accessible investments in quality residential projects. Our platform connects investors with validated, transparent projects with competitive returns in the Romanian real estate market.',
+        ? 'Asiguram un aport consistent de finantare destinat dezvoltatorilor prin crowdfunding. Acest sistem garanteaza o solutie tangibila de creditare usor de gestionat, cu avantajul de a imparti beneficiile operatiunii intre creditat si creditor, prin eliminarea intermediarilor. Testat cu succes in mai multe proiecte.'
+        : 'We provide consistent financing for developers through crowdfunding. This system guarantees a tangible, easily manageable credit solution, with the advantage of sharing benefits between borrower and lender, eliminating intermediaries. Successfully tested in multiple projects.',
       img: '/images/crowdfunding.avif',
       imgAlt: isRo ? 'NEOFORT finantare crowdfunding imobiliar Romania' : 'NEOFORT real estate crowdfunding financing Romania',
     },
     {
-      title: isRo ? 'Sisteme de Tamplarie PVC si Aluminiu' : 'PVC and Aluminium Carpentry Systems',
+      title: isRo ? 'Creditare Bancara si Nebancara' : 'Bank and Non-Bank Financing',
+      subtitle: isRo ? 'Solutii rapide si competitive de creditare' : 'Fast and competitive financing solutions',
       text: isRo
-        ? 'Prin Neofort BIZ, furnizam si montam sisteme complete de tamplarie PVC si aluminiu, sisteme de umbrire, automatizari si solutii nZEB pentru eficienta energetica maxima. Cu un istoric din 2005, am echipat fatade la zeci de blocuri, sute de case si mii de apartamente din Romania.'
-        : 'Through Neofort BIZ, we supply and install complete PVC and aluminium carpentry systems, shading systems, automations and nZEB solutions for maximum energy efficiency. With a history since 2005, we have equipped facades on dozens of buildings, hundreds of houses and thousands of apartments in Romania.',
+        ? 'Sprijinul oferit clientilor in vederea obtinerii de finantare bancara si nebancara este oferit la un nivel superior de competitivitate. Prin parteneri conectati direct cu bancile si IFN-urile din piata, reusim sa gasim solutii inclusiv pentru situatii complicate, in timpi si conditii de pret foarte avantajoase.'
+        : 'Support for clients in obtaining bank and non-bank financing is provided at superior competitiveness. Through partners directly connected with banks and NBFIs, we find solutions even for complicated situations at very advantageous timing and price conditions.',
+      img: '/images/creditare.avif',
+      imgAlt: isRo ? 'NEOFORT creditare bancara imobiliara Bucuresti' : 'NEOFORT bank financing real estate Bucharest',
+    },
+    {
+      title: isRo ? 'Sisteme Tamplarie PVC & Aluminiu' : 'PVC & Aluminium Carpentry',
+      subtitle: isRo ? 'Pret si calitate greu de egalat' : 'Price and quality hard to match',
+      text: isRo
+        ? 'Activam in furnizarea si montajul de tamplarie PVC si Aluminiu inca din 2005. Am devenit furnizor notabil de tamplarie PVC Salamander in centrul si sudul tarii. Tamplaria este produsa la standarde de calitate ce garanteaza exporturi de pana la 30-40%, ajungand in majoritatea statelor europene.'
+        : 'We have been active in PVC and Aluminium carpentry supply and installation since 2005. We became a notable Salamander PVC carpentry supplier in central and southern Romania, with quality standards guaranteeing exports of up to 30-40%, reaching most European countries.',
       img: '/images/tamplarie-servicii.avif',
-      imgAlt: isRo ? 'Neofort BIZ sisteme tamplarie PVC aluminiu nZEB Romania' : 'Neofort BIZ PVC aluminium carpentry nZEB systems Romania',
+      imgAlt: isRo ? 'Neofort BIZ sisteme tamplarie PVC aluminiu Romania' : 'Neofort BIZ PVC aluminium carpentry systems Romania',
     },
   ];
 
@@ -122,106 +120,123 @@ export default async function ServiciiPage({ params }) {
         </h1>
         <p style={{
           fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-          fontSize: 16,
+          fontSize: 15,
           fontWeight: 300,
-          color: '#e3d0a8',
-          letterSpacing: '0.04em',
-          maxWidth: 600,
+          color: 'rgba(255,255,255,0.75)',
+          maxWidth: 680,
           margin: '0 auto',
-          lineHeight: 1.7,
+          lineHeight: 1.75,
         }}>
           {isRo
-            ? 'Solutii complete pentru investitii imobiliare, constructii si tamplarie in Romania'
-            : 'Complete solutions for real estate investments, construction and carpentry in Romania'}
+            ? 'Oferim consultanta imobiliara, studii de fezabilitate, proiectare, creditare, crowdfunding si tamplarie PVC si aluminiu.'
+            : 'We offer real estate consultancy, feasibility studies, design, financing, crowdfunding and PVC and aluminium carpentry.'}
         </p>
+
+        {/* Rezumat servicii — ca pe site-ul original */}
+        <div style={{
+          maxWidth: 760,
+          margin: '32px auto 0',
+          fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+          fontSize: 14,
+          fontWeight: 300,
+          color: 'rgba(255,255,255,0.65)',
+          lineHeight: 2,
+          textAlign: 'center',
+        }}>
+          {isRo ? (
+            <>
+              Oferim <strong style={{ color: '#e3d0a8', fontWeight: 500 }}>consultanta imobiliara</strong> in vederea vanzarii de apartamente in ansambluri rezidentiale proprii cat si de la parteneri.<br />
+              Asiguram <strong style={{ color: '#e3d0a8', fontWeight: 500 }}>studii de fezabilitate</strong> pentru managementul dezvoltarilor imobiliare, plan de marketing si managementul proiectelor.<br />
+              Acordam <strong style={{ color: '#e3d0a8', fontWeight: 500 }}>consultanta in proiectare, arhitectura, design interior</strong> si landscaping pentru ansambluri rezidentiale noi.<br />
+              Oferim <strong style={{ color: '#e3d0a8', fontWeight: 500 }}>servicii de crowdfunding</strong>, precum si <strong style={{ color: '#e3d0a8', fontWeight: 500 }}>consultanta pentru finantare</strong> bancara si nebancara.<br />
+              Avem o mare acoperire zonala in furnizarea <strong style={{ color: '#e3d0a8', fontWeight: 500 }}>sistemelor de tamplarie Salamander</strong>.
+            </>
+          ) : (
+            <>
+              We offer <strong style={{ color: '#e3d0a8', fontWeight: 500 }}>real estate consultancy</strong> for apartment sales in own and partner residential complexes.<br />
+              We provide <strong style={{ color: '#e3d0a8', fontWeight: 500 }}>feasibility studies</strong> for real estate development management, marketing plans and project management.<br />
+              We provide <strong style={{ color: '#e3d0a8', fontWeight: 500 }}>consultancy in design, architecture, interior design</strong> and landscaping for new residential complexes.<br />
+              We offer <strong style={{ color: '#e3d0a8', fontWeight: 500 }}>crowdfunding services</strong>, as well as <strong style={{ color: '#e3d0a8', fontWeight: 500 }}>financing consultancy</strong> for bank and non-bank credit.<br />
+              We have wide regional coverage in supplying <strong style={{ color: '#e3d0a8', fontWeight: 500 }}>Salamander carpentry systems</strong>.
+            </>
+          )}
+        </div>
       </section>
 
-      {/* Services list */}
-      {services.map((service, i) => (
-        <section
-          key={i}
-          aria-labelledby={`service-title-${i}`}
-          style={{
-            background: i % 2 === 0 ? '#fff' : '#f7f7f5',
-            paddingTop: 60,
-            paddingBottom: 64,
-          }}
-        >
-          <div style={{ maxWidth: 980, margin: '0 auto', padding: '0 20px' }}>
-            <div style={{
-              position: 'relative',
-              width: '100%',
-              height: 380,
-              marginBottom: 36,
-              overflow: 'hidden',
-              borderRadius: 2,
-            }}>
-              <Image
-                src={service.img}
-                alt={service.imgAlt}
-                fill
-                loading={i === 0 ? 'eager' : 'lazy'}
-                sizes="(max-width: 980px) 100vw, 980px"
-                style={{ objectFit: 'cover' }}
-              />
-            </div>
-            <h2
-              id={`service-title-${i}`}
+      {/* Cards grid — 3 coloane verticale ca pe site-ul original */}
+      <section style={{ background: '#f7f7f5', padding: '60px 20px 72px' }}>
+        <div style={{
+          maxWidth: 1160,
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: 20,
+        }}>
+          {services.map((service, i) => (
+            <article
+              key={i}
+              aria-labelledby={`service-${i}`}
               style={{
-                fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-                fontSize: 'clamp(20px, 2.8vw, 28px)',
-                fontWeight: 400,
-                color: '#1a1a1a',
-                letterSpacing: '0.04em',
-                textTransform: 'uppercase',
-                marginBottom: 16,
+                background: '#1a1a1a',
+                overflow: 'hidden',
+                borderRadius: 2,
+                display: 'flex',
+                flexDirection: 'column',
               }}
             >
-              {service.title}
-            </h2>
-            <p style={{
-              fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-              fontSize: 16,
-              fontWeight: 300,
-              color: '#4a4a4a',
-              lineHeight: 1.85,
-              maxWidth: 760,
-            }}>
-              {service.text}
-            </p>
-          </div>
-        </section>
-      ))}
+              {/* Imagine */}
+              <div style={{ position: 'relative', width: '100%', height: 240, flexShrink: 0 }}>
+                <Image
+                  src={service.img}
+                  alt={service.imgAlt}
+                  fill
+                  loading={i < 3 ? 'eager' : 'lazy'}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1160px) 33vw, 360px"
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
 
-      {/* CTA */}
-      <section style={{ background: '#1a1a1a', padding: '56px 20px', textAlign: 'center' }}>
-        <h2 style={{
-          fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-          fontSize: 24,
-          fontWeight: 300,
-          color: '#fff',
-          letterSpacing: '0.06em',
-          marginBottom: 16,
-        }}>
-          {isRo ? 'Contactati-ne pentru o consultatie gratuita' : 'Contact us for a free consultation'}
-        </h2>
-        <a
-          href={`/${locale}/contact`}
-          style={{
-            display: 'inline-block',
-            padding: '14px 40px',
-            border: '1px solid #e3d0a8',
-            fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-            fontSize: 15,
-            fontWeight: 300,
-            color: '#e3d0a8',
-            letterSpacing: '0.06em',
-            borderRadius: 100,
-            textDecoration: 'none',
-          }}
-        >
-          {isRo ? 'Contactati-ne' : 'Contact us'}
-        </a>
+              {/* Content */}
+              <div style={{ padding: '22px 22px 28px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                <h2
+                  id={`service-${i}`}
+                  style={{
+                    fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+                    fontSize: 15,
+                    fontWeight: 600,
+                    color: '#fff',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.06em',
+                    marginBottom: 8,
+                    lineHeight: 1.4,
+                  }}
+                >
+                  {service.title}
+                </h2>
+                <p style={{
+                  fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+                  fontSize: 13,
+                  fontWeight: 400,
+                  color: '#e3d0a8',
+                  lineHeight: 1.55,
+                  marginBottom: 12,
+                }}>
+                  {service.subtitle}
+                </p>
+                <p style={{
+                  fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+                  fontSize: 13,
+                  fontWeight: 300,
+                  color: '#bbb',
+                  lineHeight: 1.75,
+                  flex: 1,
+                }}>
+                  {service.text}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
     </>
   );
