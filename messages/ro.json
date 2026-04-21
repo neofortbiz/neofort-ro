@@ -5,20 +5,19 @@
     "contact": "Contact"
   },
   "home": {
-    "hero_title": "NEOFORT",
-    "hero_subtitle": "Trecut, prezent și viitor",
-    "hero_text": "În 2025 am bifat al 85-lea ansamblu rezidențial reprezentat. În ultimii 14 ani am asigurat consultanță în managementul proiectului cât și studiul de fezabilitate pentru 41 de ansambluri rezidențiale. Actualmente suntem prezenți în piață cu aproximativ 19 proiecte la vânzare.",
-    "despre_title": "DESPRE NOI",
-    "despre_text": "NEOFORT este un grup de companii cu o vechime de peste 21 ani cu activități conexe pieței imobiliare și construcțiilor.",
+    "hero_subtitle": "Trecut, prezent si viitor",
+    "hero_text": "In 2025 am bifat al 85-lea ansamblu rezidential reprezentat. In ultimii 14 ani am asigurat consultanta in managementul proiectului cat si studiul de fezabilitate pentru 41 de ansambluri rezidentiale. In ultimii 21 de ani am imbracat fatade in tamplarie la zeci de blocuri, sute de case si mii de apartamente. Actualmente suntem prezenti in piata cu aproximativ 19 proiecte la vanzare.",
+    "despre_title": "Despre Noi",
+    "despre_text": "NEOFORT este un grup de companii cu o vechime de peste 21 de ani, cu activitati conexe pietei imobiliare si constructiilor. Experienta noastra acopera consultanta in management de proiect, vanzari rezidentiale off-plan si furnizare de tamplarie PVC si aluminiu.",
     "despre_btn": "Mai multe detalii",
-    "vanzare_title": "ANSAMBLURI REZIDENȚIALE — VÂNZARE",
-    "vanzare_text": "Neofort IMO — Reprezentare de Ansambluri rezidențiale în lucru sau în faze finale de definitivare în curs de rezervare sau vânzare.",
+    "vanzare_title": "Ansambluri Rezidentiale — Vanzare",
+    "vanzare_text": "Neofort IMO reprezinta ansambluri rezidentiale aflate in lucru sau in faze finale de definitivare, disponibile pentru rezervare sau vanzare. Portofoliu activ: aproximativ 19 proiecte rezidentiale in diverse stadii de evolutie in Bucuresti si zona metropolitana.",
     "vanzare_btn": "Mai multe detalii",
-    "dezvoltare_title": "ANSAMBLURI REZIDENȚIALE — DEZVOLTARE",
-    "dezvoltare_text": "Neofort NEW HOMES — Dezvoltare imobiliară de proiecte rezidențiale în zone centrale și ultracentrale din București.",
+    "dezvoltare_title": "Ansambluri Rezidentiale — Dezvoltare",
+    "dezvoltare_text": "Neofort NEW HOMES dezvolta proiecte rezidentiale in zone centrale si ultracentrale din Bucuresti. Pentru 2026 intentionam lansarea a inca 2 ansambluri rezidentiale in parteneriate strategice.",
     "dezvoltare_btn": "Mai multe detalii",
-    "tamplarie_title": "FURNIZOR DE TÂMPLĂRIE PVC și ALUMINIU",
-    "tamplarie_text": "Neofort BIZ — furnizor regional de tâmplărie PVC, tâmplărie aluminiu, sisteme de umbrire, sisteme nZEB, automatizări și accesorii pentru tâmplărie, cu un istoric începând din 2005.",
+    "tamplarie_title": "Furnizor de Tamplarie PVC si Aluminiu",
+    "tamplarie_text": "Neofort BIZ este furnizor regional de tamplarie PVC, tamplarie aluminiu, sisteme de umbrire, sisteme nZEB, automatizari si accesorii pentru tamplarie, cu un istoric incepand din 2005. Am imbracat fatade la zeci de blocuri si sute de case din Romania.",
     "tamplarie_btn": "Mai multe detalii"
   },
   "servicii": {
@@ -27,26 +26,26 @@
   },
   "contact": {
     "title": "Contact",
-    "adresa": "Str. Theodor Aman Pictor 11, sector 1, București",
+    "adresa": "Str. Theodor Aman Pictor 11, sector 1, Bucuresti",
     "tel": "+40215280660",
-    "program_title": "PROGRAM",
-    "program_lv": "Luni-Vineri: 10:00 - 18:00",
-    "program_sd": "Sâmbătă-Duminică: Închis",
+    "program_title": "Program",
+    "program_lv": "Luni — Vineri: 10:00 — 18:00",
+    "program_sd": "Sambata — Duminica: Inchis",
     "form_nume": "Nume",
     "form_email": "Email",
     "form_tel": "Telefon",
     "form_subiect": "Subiect",
     "form_mesaj": "Mesaj",
-    "form_gdpr": "Sunt de acord cu Politica GDPR",
-    "form_btn": "Trimite",
-    "form_success": "Mesajul a fost trimis cu succes!"
+    "form_gdpr": "Sunt de acord cu Politica de Confidentialitate",
+    "form_btn": "Trimite mesaj",
+    "form_success": "Mesajul a fost trimis cu succes! Va vom contacta in cel mai scurt timp."
   },
   "gdpr": {
-    "title": "Politica GDPR"
+    "title": "Politica de Confidentialitate"
   },
   "footer": {
     "tel": "+40215280660 / +40215280661",
-    "adresa": "11 Strada Theodor Aman Pictor, București, 010776, Romania",
-    "copyright": "©2025 NEOFORT BUCUREȘTI"
+    "adresa": "11 Strada Theodor Aman Pictor, Bucuresti, 010776, Romania",
+    "copyright": "©2025 NEOFORT BUCURESTI"
   }
 }

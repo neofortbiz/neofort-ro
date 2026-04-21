@@ -5,20 +5,19 @@
     "contact": "Contact"
   },
   "home": {
-    "hero_title": "NEOFORT",
     "hero_subtitle": "Past, present and future",
-    "hero_text": "In 2025 we reached our 85th represented residential complex. Over the last 14 years we have provided project management consultancy and feasibility studies for 41 residential complexes. We are currently active in the market with approximately 19 projects for sale.",
-    "despre_title": "ABOUT US",
-    "despre_text": "NEOFORT is a group of companies with over 21 years of experience in activities related to real estate and construction.",
+    "hero_text": "In 2025 we reached our 85th represented residential complex. Over the last 14 years we have provided project management consultancy and feasibility studies for 41 residential complexes. Over 21 years we have fitted facades with carpentry on dozens of buildings, hundreds of houses and thousands of apartments. We are currently active in the market with approximately 19 projects for sale.",
+    "despre_title": "About Us",
+    "despre_text": "NEOFORT is a group of companies with over 21 years of experience in activities related to real estate and construction. Our expertise covers project management consultancy, off-plan residential sales and supply of PVC and aluminium carpentry.",
     "despre_btn": "More details",
-    "vanzare_title": "RESIDENTIAL COMPLEXES — FOR SALE",
-    "vanzare_text": "Neofort IMO — Representation of residential complexes under construction or in final stages, available for reservation or sale.",
+    "vanzare_title": "Residential Complexes — For Sale",
+    "vanzare_text": "Neofort IMO represents residential complexes under construction or in final stages, available for reservation or sale. Active portfolio: approximately 19 residential projects in various stages of development in Bucharest and the metropolitan area.",
     "vanzare_btn": "More details",
-    "dezvoltare_title": "RESIDENTIAL COMPLEXES — DEVELOPMENT",
-    "dezvoltare_text": "Neofort NEW HOMES — Real estate development of residential projects in central and ultra-central areas of Bucharest.",
+    "dezvoltare_title": "Residential Complexes — Development",
+    "dezvoltare_text": "Neofort NEW HOMES develops residential projects in central and ultra-central areas of Bucharest. For 2026 we plan the launch of 2 more residential complexes in strategic partnerships.",
     "dezvoltare_btn": "More details",
-    "tamplarie_title": "PVC AND ALUMINIUM CARPENTRY SUPPLIER",
-    "tamplarie_text": "Neofort BIZ — regional supplier of PVC carpentry, aluminium carpentry, shading systems, nZEB systems, automations and carpentry accessories, with a history dating back to 2005.",
+    "tamplarie_title": "PVC and Aluminium Carpentry Supplier",
+    "tamplarie_text": "Neofort BIZ is a regional supplier of PVC carpentry, aluminium carpentry, shading systems, nZEB systems, automations and carpentry accessories, with a history dating back to 2005. We have fitted facades on dozens of buildings and hundreds of houses across Romania.",
     "tamplarie_btn": "More details"
   },
   "servicii": {
@@ -29,20 +28,20 @@
     "title": "Contact",
     "adresa": "11 Theodor Aman Pictor St., sector 1, Bucharest",
     "tel": "+40215280660",
-    "program_title": "SCHEDULE",
-    "program_lv": "Monday-Friday: 10:00 - 18:00",
-    "program_sd": "Saturday-Sunday: Closed",
+    "program_title": "Schedule",
+    "program_lv": "Monday — Friday: 10:00 — 18:00",
+    "program_sd": "Saturday — Sunday: Closed",
     "form_nume": "Name",
     "form_email": "Email",
     "form_tel": "Phone",
     "form_subiect": "Subject",
     "form_mesaj": "Message",
-    "form_gdpr": "I agree with the GDPR Policy",
-    "form_btn": "Send",
-    "form_success": "Message sent successfully!"
+    "form_gdpr": "I agree with the Privacy Policy",
+    "form_btn": "Send message",
+    "form_success": "Your message has been sent successfully! We will contact you as soon as possible."
   },
   "gdpr": {
-    "title": "GDPR Policy"
+    "title": "Privacy Policy"
   },
   "footer": {
     "tel": "+40215280660 / +40215280661",

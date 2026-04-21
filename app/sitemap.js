@@ -1,32 +1,39 @@
 const BASE = 'https://www.neofort.ro';
-const LOCALES = ['ro', 'en'];
-
-const PATHS = {
-  '/': { ro: '/', en: '/' },
-  '/servicii': { ro: '/servicii', en: '/services' },
-  '/contact': { ro: '/contact', en: '/contact' },
-};
 
 export default function sitemap() {
+  const pages = [
+    { ro: '', en: '', priority: 1.0, changeFrequency: 'weekly' },
+    { ro: '/servicii', en: '/services', priority: 0.8, changeFrequency: 'monthly' },
+    { ro: '/contact', en: '/contact', priority: 0.8, changeFrequency: 'monthly' },
+    { ro: '/gdpr', en: '/gdpr', priority: 0.3, changeFrequency: 'yearly' },
+  ];
+
   const entries = [];
-
-  for (const [key, paths] of Object.entries(PATHS)) {
-    for (const locale of LOCALES) {
-      const path = paths[locale];
-      entries.push({
-        url: `${BASE}/${locale}${path === '/' ? '' : path}`,
-        lastModified: new Date(),
-        changeFrequency: key === '/' ? 'weekly' : 'monthly',
-        priority: key === '/' ? 1.0 : 0.8,
-        alternates: {
-          languages: {
-            ro: `${BASE}/ro${paths.ro === '/' ? '' : paths.ro}`,
-            en: `${BASE}/en${paths.en === '/' ? '' : paths.en}`,
-          },
+  for (const page of pages) {
+    entries.push({
+      url: `${BASE}/ro${page.ro}`,
+      lastModified: new Date(),
+      changeFrequency: page.changeFrequency,
+      priority: page.priority,
+      alternates: {
+        languages: {
+          ro: `${BASE}/ro${page.ro}`,
+          en: `${BASE}/en${page.en}`,
         },
-      });
-    }
+      },
+    });
+    entries.push({
+      url: `${BASE}/en${page.en}`,
+      lastModified: new Date(),
+      changeFrequency: page.changeFrequency,
+      priority: page.priority,
+      alternates: {
+        languages: {
+          ro: `${BASE}/ro${page.ro}`,
+          en: `${BASE}/en${page.en}`,
+        },
+      },
+    });
   }
-
   return entries;
 }
