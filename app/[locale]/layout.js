@@ -47,7 +47,7 @@ export function generateStaticParams() {
 
 export default async function LocaleLayout({ children, params }) {
   const { locale } = await params;
-  if (!routing.locales.includes(locale)) notFound();
+  if (!locales.includes(locale)) notFound();
   const messages = await getMessages();
 
   return (
