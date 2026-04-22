@@ -216,7 +216,6 @@ export default async function HomePage({ params }) {
                 {item.btn}
               </a>
             )}
-            </a>
           </div>
         </section>
       ))}
