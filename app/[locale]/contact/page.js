@@ -29,26 +29,31 @@ export default async function ContactPage({ params }) {
       title: isRo ? 'CONSULTANTA IMOBILIARA' : 'REAL ESTATE CONSULTANCY',
       img: '/images/Consultanta_Imobiliara.avif',
       imgAlt: 'NEOFORT Consultanta Imobiliara',
+      href: 'mailto:info@neofort-biz.ro',
     },
     {
       title: isRo ? 'CROWDFUNDING' : 'CROWDFUNDING',
       img: '/images/NEOFORT_CROWDFUNDING.avif',
       imgAlt: 'NEOFORT Crowdfunding',
+      href: 'mailto:dan.calutu@neofort-biz.ro',
     },
     {
       title: isRo ? 'CONSTRUCTIE SI PROIECTARE' : 'CONSTRUCTION & DESIGN',
       img: '/images/Neofort_constructie_si_proiectare.avif',
       imgAlt: 'NEOFORT Constructie si Proiectare',
+      href: 'mailto:office@neofort-biz.ro',
     },
     {
       title: isRo ? 'CREDITARE BANCARA SI NEBANCARA' : 'BANK & NON-BANK FINANCING',
       img: '/images/Finantare_bancara_si_nebancara.avif',
       imgAlt: 'NEOFORT Creditare Bancara',
+      href: 'mailto:office@neofort-biz.ro',
     },
     {
       title: isRo ? 'TAMPLARIE ALUMINIU SI TERMOPANE PVC' : 'ALUMINIUM & PVC CARPENTRY',
       img: '/images/TAMPLARIE_Aluminiu_si_TERMOPANE_PVC.avif',
       imgAlt: 'NEOFORT Tamplarie',
+      href: 'https://www.neofort-biz.ro/ro',
     },
   ];
 
@@ -77,7 +82,7 @@ export default async function ContactPage({ params }) {
         {carduri.map((card, i) => (
           <div key={i} style={{ background: '#fff', marginBottom: 2 }}>
             {/* Imagine landscape */}
-            <div style={{ position: 'relative', width: '100%', height: 340 }}>
+            <div style={{ position: 'relative', width: '100%', height: 374 }}>
               <Image
                 src={card.img}
                 alt={card.imgAlt}
@@ -93,7 +98,9 @@ export default async function ContactPage({ params }) {
                 {card.title}
               </h2>
               <a
-                href={`mailto:office@neofort.ro?subject=${encodeURIComponent(card.title)}`}
+                href={card.href}
+                target={card.href.startsWith('http') ? '_blank' : undefined}
+                rel={card.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 style={{
                   display: 'inline-block',
                   padding: '10px 32px',
@@ -136,16 +143,7 @@ export default async function ContactPage({ params }) {
         />
       </div>
 
-      {/* Program */}
-      <div style={{ textAlign: 'center', padding: '60px 20px 80px' }}>
-        <h2 style={{ fontFamily: F, fontSize: 18, fontWeight: 300, color: '#1a1a1a', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 20 }}>
-          PROGRAM
-        </h2>
-        <p style={{ fontFamily: F, fontSize: 14, fontWeight: 300, color: '#1a1a1a', lineHeight: 2 }}>
-          {isRo ? 'Luni-Vineri: 10.00 - 18.00' : 'Monday-Friday: 10:00 - 18:00'}<br />
-          {isRo ? 'Sambata - Duminica: Inchis' : 'Saturday - Sunday: Closed'}
-        </p>
-      </div>
+      <div style={{ paddingBottom: 80 }} />
 
     </div>
   );
