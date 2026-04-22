@@ -151,13 +151,12 @@ export default async function ServiciiPage({ params }) {
         </div>
       </section>
 
-      {/* Grid 3 coloane × 2 rânduri — carduri cu imagine background + text overlay sus */}
+      {/* Grid 3 coloane × 2 rânduri — carduri cu imagine background + text overlay jos */}
       <section style={{ background: '#f7f7f5', padding: '0 80px 80px' }}>
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
           gap: 30,
-          alignItems: 'flex-start',
         }}>
           {services.map((service, i) => (
             <article
@@ -169,7 +168,7 @@ export default async function ServiciiPage({ params }) {
                 overflow: 'hidden',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'flex-start',
+                justifyContent: 'flex-end',
                 background: '#1a1a1a',
               }}
             >
@@ -183,14 +182,14 @@ export default async function ServiciiPage({ params }) {
                 style={{ objectFit: 'cover', opacity: 0.75 }}
               />
 
-              {/* Overlay gradient sus */}
+              {/* Overlay gradient jos */}
               <div style={{
                 position: 'absolute',
                 inset: 0,
-                background: 'linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%)',
+                background: 'linear-gradient(to bottom, rgba(0,0,0,0) 30%, rgba(0,0,0,0.6) 100%)',
               }} aria-hidden="true" />
 
-              {/* Text sus */}
+              {/* Text jos */}
               <div style={{
                 position: 'relative',
                 zIndex: 1,
