@@ -122,3 +122,8 @@ main h1, main h2, main h3 {
 .text-center p {
   text-align: center !important;
 }
+
+/* ===== CONTACT MOBILE ===== */
+@media (max-width: 768px) {
+  .hero-content h1 { text-align: center !important; }
+}

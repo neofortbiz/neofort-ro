@@ -174,7 +174,7 @@ export default async function HomePage({ params }) {
         />
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.52)' }} />
         <div className="hero-content" style={{ position: 'relative', zIndex: 1, textAlign: 'center', padding: '60px 20px', maxWidth: 860, width: '100%' }}>
-          <h1 className="hero-title" style={{ fontFamily: F, fontWeight: 300, color: '#fff', letterSpacing: '0.12em', lineHeight: 1.2, marginBottom: 16 }}>
+          <h1 className="hero-title" style={{ fontFamily: F, fontWeight: 300, color: '#fff', letterSpacing: '0.12em', lineHeight: 1.2, marginBottom: 16, textAlign: 'center', width: '100%' }}>
             NEOFORT
           </h1>
           <p className="hero-subtitle" style={{ fontFamily: F, fontWeight: 300, color: '#fff', letterSpacing: '0.05em', marginBottom: 28 }}>
