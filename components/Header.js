@@ -13,7 +13,7 @@ export default function Header({ locale }) {
   const navLinks = [
     { href: '/', label: t('home') },
     { href: '/servicii', label: t('servicii') },
-    { href: '/despre-noi', label: isRo ? 'Despre Noi' : 'About' },
+    { href: '/despre-noi', label: locale === 'ro' ? 'Despre Noi' : 'About' },
     { href: '/contact', label: t('contact') },
   ];
 
