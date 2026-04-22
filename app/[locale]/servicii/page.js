@@ -1,4 +1,3 @@
-import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 
 const BASE = 'https://www.neofort.ro';
@@ -15,15 +14,13 @@ export async function generateMetadata({ params }) {
       : 'NEOFORT services: real estate consultancy, feasibility studies, architectural design, bank financing, crowdfunding, PVC and aluminium carpentry systems.',
     alternates: {
       canonical: `${BASE}/${locale}/${locale === 'ro' ? 'servicii' : 'services'}`,
-      languages: {
-        ro: `${BASE}/ro/servicii`,
-        en: `${BASE}/en/services`,
-        'x-default': `${BASE}/ro/servicii`,
-      },
+      languages: { ro: `${BASE}/ro/servicii`, en: `${BASE}/en/services`, 'x-default': `${BASE}/ro/servicii` },
     },
     robots: { index: true, follow: true },
   };
 }
+
+const F = "'Helvetica Neue', Helvetica, Arial, sans-serif";
 
 export default async function ServiciiPage({ params }) {
   const { locale } = await params;
@@ -35,7 +32,7 @@ export default async function ServiciiPage({ params }) {
       subtitle: isRo ? 'Vanzari off-plan la preturi cu potential investitional' : 'Off-plan sales at investment potential prices',
       text: isRo
         ? 'In ultimii 5 ani portofoliul nostru de clienti a fost constituit din cumparatori si investitori ce ne-au acordat un vot consistent de incredere, astfel am atins rezultate remarcabile in zona vanzarilor off-plan. Majoritatea clientilor nostri au cumparat imobile, indiferent de proiect sau zona, la preturi discountate suficient de mult, incat multi dintre ei alegand revanzarea in detrimentul inchirierii.'
-        : 'Over the last 5 years our client portfolio consisted of buyers and investors who gave us consistent trust, achieving remarkable results in off-plan sales. Most clients purchased properties at sufficiently discounted prices that many chose resale over renting.',
+        : 'Over the last 5 years our client portfolio consisted of buyers and investors who gave us consistent trust. We achieved remarkable results in off-plan sales. Most clients purchased at sufficiently discounted prices that many chose resale over renting.',
       img: '/images/consultanta.avif',
       imgAlt: isRo ? 'NEOFORT consultanta imobiliara Bucuresti' : 'NEOFORT real estate consultancy Bucharest',
     },
@@ -43,7 +40,7 @@ export default async function ServiciiPage({ params }) {
       title: isRo ? 'STUDII DE FEZABILITATE' : 'FEASIBILITY STUDIES',
       subtitle: isRo ? 'Un proiect de succes se bazeaza pe profesionisti' : 'A successful project relies on professionals',
       text: isRo
-        ? 'Oferim consultanta in managementul proiectului si studii de fezabilitate pentru dezvoltatori si investitori parteneri. Intr-o piata concurentiala, calculul si studiul atent legat de adresabilitatea si fezabilitatea economica a unui proiect, garanteaza intr-o masura decisiva succesul unei dezvoltari imobiliare. Mizam pe experienta acumulata in ultimii ani si marsam pe strategii preponderent prudentiale.'
+        ? 'Oferim consultanta in managementul proiectului si studii de fezabilitate pentru dezvoltatori si investitori parteneri. Intr-o piata concurentiala, calculul si studiul atent legat de adresabilitatea si fezabilitatea economica a unui proiect garanteaza intr-o masura decisiva succesul unei dezvoltari imobiliare. Mizam pe experienta acumulata in ultimii ani si marsam pe strategii preponderent prudentiale.'
         : 'We provide project management consultancy and feasibility studies for developers and partner investors. In a competitive market, careful study of addressability and economic feasibility decisively guarantees the success of a real estate development.',
       img: '/images/fezabilitate.avif',
       imgAlt: isRo ? 'NEOFORT studii fezabilitate proiecte imobiliare' : 'NEOFORT feasibility studies real estate projects',
@@ -61,8 +58,8 @@ export default async function ServiciiPage({ params }) {
       title: isRo ? 'FINANTARE PRIN CROWDFUNDING' : 'CROWDFUNDING FINANCING',
       subtitle: isRo ? 'O creditare inteligenta bazata pe principii de equity' : 'Intelligent financing based on equity principles',
       text: isRo
-        ? 'Asiguram un aport consistent de finantare destinat dezvoltatorilor prin crowdfunding. Acest sistem de finantare garanteaza o solutie tangibila in a asigura o creditare usor de gestionat. Acest tip de creditare are avantajul de a imparti beneficiile operatiunii de creditare intre creditat si creditor, prin eliminarea puntilor de intermediari. Acest tip de creditare a fost testat cu succes in mai multe proiecte.'
-        : 'We provide consistent financing for developers through crowdfunding. This system guarantees a tangible solution for easily manageable credit, with the advantage of sharing benefits between borrower and lender, eliminating intermediaries. Successfully tested in multiple projects.',
+        ? 'Asiguram un aport consistent de finantare destinat dezvoltatorilor prin crowdfunding. Acest sistem garanteaza o solutie tangibila de creditare usor de gestionat. Acest tip de creditare are avantajul de a imparti beneficiile operatiunii intre creditat si creditor, prin eliminarea intermediarilor. A fost testat cu succes in mai multe proiecte.'
+        : 'We provide consistent financing for developers through crowdfunding. This system guarantees a tangible, easily manageable credit solution, sharing benefits between borrower and lender, eliminating intermediaries. Successfully tested in multiple projects.',
       img: '/images/crowdfunding.avif',
       imgAlt: isRo ? 'NEOFORT finantare crowdfunding imobiliar Romania' : 'NEOFORT real estate crowdfunding financing Romania',
     },
@@ -70,8 +67,8 @@ export default async function ServiciiPage({ params }) {
       title: isRo ? 'CREDITARE BANCARA SI NEBANCARA' : 'BANK AND NON-BANK FINANCING',
       subtitle: isRo ? 'Asiguram solutii rapide si competitive de creditare' : 'Fast and competitive financing solutions',
       text: isRo
-        ? 'Sprijinul oferit clientilor si investitorilor cumparatori in vederea obtinerii de finantare bancara si nebancara este oferit la un nivel superior de competitivitate. Prin parteneri conectati direct cu bancile si IFN-urile din piata, reusim sa gasim solutii inclusiv pentru situatii complicate. Practic incercam sa gasim solutii usoare si avantajoase pentru un client, de a obtine creditul in timpi si in conditii de pret foarte avantajoase.'
-        : 'We provide bank and non-bank financing support at superior competitiveness. Through partners directly connected with banks and NBFIs, we find solutions even for complicated situations, at very advantageous timing and price conditions.',
+        ? 'Sprijinul oferit clientilor si investitorilor in vederea obtinerii de finantare bancara si nebancara este oferit la un nivel superior de competitivitate. Prin parteneri conectati direct cu bancile si IFN-urile din piata, reusim sa gasim solutii inclusiv pentru situatii complicate, in timpi si conditii de pret foarte avantajoase.'
+        : 'Support for clients in obtaining bank and non-bank financing is provided at superior competitiveness. Through partners directly connected with banks and NBFIs, we find solutions even for complicated situations at very advantageous price and time conditions.',
       img: '/images/creditare.avif',
       imgAlt: isRo ? 'NEOFORT creditare bancara imobiliara Bucuresti' : 'NEOFORT bank financing real estate Bucharest',
     },
@@ -79,11 +76,10 @@ export default async function ServiciiPage({ params }) {
       title: isRo ? 'SISTEME DE TAMPLARIE PVC & ALUMINIU' : 'PVC & ALUMINIUM CARPENTRY SYSTEMS',
       subtitle: isRo ? 'La un pret si o calitate a produselor si serviciilor greu de egalat' : 'Price and quality hard to match',
       text: isRo
-        ? 'Activam in sfera furnizararii si montajului de tamplarie PVC si Aluminiu inca din 2005. In timp am devenit un furnizor notabil de tamplarie PVC Salamander din centrul si sudul tarii. Tamplaria este produsa in una dintre cele mai mari fabrici de profil din tara la standarde de calitate ce garanteaza o pondere a exporturilor de pana la 30-40%. Tamplaria furnizata de noi a ajuns in majoritatea statelor europene.'
+        ? 'Activam in sfera furnizararii si montajului de tamplarie PVC si Aluminiu inca din 2005. In timp am devenit un furnizor notabil de tamplarie PVC Salamander din centrul si sudul tarii. Tamplaria este produsa la standarde de calitate ce garanteaza exporturi de pana la 30-40%, ajungand in majoritatea statelor europene.'
         : 'Active in PVC and Aluminium carpentry supply and installation since 2005. We became a notable Salamander PVC carpentry supplier in central and southern Romania, with quality standards guaranteeing exports of up to 30-40% reaching most European countries.',
       img: '/images/tamplarie-servicii.avif',
       imgAlt: isRo ? 'Neofort BIZ sisteme tamplarie PVC aluminiu Romania' : 'Neofort BIZ PVC aluminium carpentry systems Romania',
-      href: 'https://www.neofort-biz.ro/ro',
     },
   ];
 
@@ -101,57 +97,35 @@ export default async function ServiciiPage({ params }) {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      {/* Header sectiune — fundal alb, text centrat */}
+      {/* Header sectiune — alb, text centrat */}
       <section style={{ background: '#fff', padding: '80px 20px 40px', textAlign: 'center' }}>
-        <h1 style={{
-          fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-          fontSize: 'clamp(20px, 3vw, 26px)',
-          fontWeight: 300,
-          color: '#1a1a1a',
-          textTransform: 'uppercase',
-          letterSpacing: '0.15em',
-          marginBottom: 32,
-        }}>
+        <h1 style={{ fontFamily: F, fontSize: 'clamp(18px, 2.5vw, 24px)', fontWeight: 200, color: '#1a1a1a', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 32 }}>
           {isRo ? 'SERVICII' : 'SERVICES'}
         </h1>
-
-        {/* Rezumat text centrat — exact ca originalul */}
-        <div style={{
-          maxWidth: 820,
-          margin: '0 auto',
-          fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-          fontSize: 14,
-          fontWeight: 300,
-          color: '#1a1a1a',
-          lineHeight: 2,
-          textAlign: 'center',
-        }}>
+        <div style={{ maxWidth: 820, margin: '0 auto', fontFamily: F, fontSize: 14, fontWeight: 200, color: '#1a1a1a', lineHeight: 2, textAlign: 'center' }}>
           {isRo ? (
             <>
-              Oferim <strong style={{ fontWeight: 700 }}>consultanta imobiliara</strong> in vederea vanzarii de apartamente in ansambluri rezidentiale proprii cat si de la parteneri.<br />
-              Asiguram <strong style={{ fontWeight: 700 }}>studii de fezabilitate</strong> pentru managementul dezvoltarilor imobiliare, plan de marketing si managementul proiectului.<br />
-              Acordam <strong style={{ fontWeight: 700 }}>consultanta in proiectare</strong>, <strong style={{ fontWeight: 700 }}>arhitectura</strong>, <strong style={{ fontWeight: 700 }}>design interior</strong> si <strong style={{ fontWeight: 700 }}>landscaping</strong> pentru ansambluri rezidentiale noi finalizate si in constructie.<br />
-              Oferim&nbsp;<strong style={{ fontWeight: 700 }}>servicii de crowdfunding</strong>, precum si <strong style={{ fontWeight: 700 }}>consultanta pentru finantare</strong> bancara si nebancara.<br />
-              Avem o mare acoperire zonala in furnizarea <a href="https://www.neofort-biz.ro/ro" target="_blank" rel="noopener noreferrer" style={{ color: '#1a1a1a', fontWeight: 700 }}>sistemelor de tamplarie Salamander</a>.
+              Oferim <strong style={{ fontWeight: 600 }}>consultanta imobiliara</strong> in vederea vanzarii de apartamente in ansambluri rezidentiale proprii cat si de la parteneri.<br />
+              Asiguram <strong style={{ fontWeight: 600 }}>studii de fezabilitate</strong> pentru managementul dezvoltarilor imobiliare, plan de marketing si managementul proiectului.<br />
+              Acordam <strong style={{ fontWeight: 600 }}>consultanta in proiectare</strong>, <strong style={{ fontWeight: 600 }}>arhitectura</strong>, <strong style={{ fontWeight: 600 }}>design interior</strong> si <strong style={{ fontWeight: 600 }}>landscaping</strong> pentru ansambluri rezidentiale noi finalizate si in constructie.<br />
+              Oferim&nbsp;<strong style={{ fontWeight: 600 }}>servicii de crowdfunding</strong>, precum si <strong style={{ fontWeight: 600 }}>consultanta pentru finantare</strong> bancara si nebancara.<br />
+              Avem o mare acoperire zonala in furnizarea <a href="https://www.neofort-biz.ro/ro" target="_blank" rel="noopener noreferrer" style={{ color: '#1a1a1a', fontWeight: 600 }}>sistemelor de tamplarie Salamander</a>.
             </>
           ) : (
             <>
-              We offer <strong style={{ fontWeight: 700 }}>real estate consultancy</strong> for apartment sales in own and partner residential complexes.<br />
-              We provide <strong style={{ fontWeight: 700 }}>feasibility studies</strong> for real estate development management, marketing plans and project management.<br />
-              We provide <strong style={{ fontWeight: 700 }}>consultancy in design, architecture, interior design</strong> and landscaping for new residential complexes.<br />
-              We offer <strong style={{ fontWeight: 700 }}>crowdfunding services</strong>, as well as <strong style={{ fontWeight: 700 }}>financing consultancy</strong> for bank and non-bank credit.<br />
-              We have wide regional coverage in supplying <a href="https://www.neofort-biz.ro/ro" target="_blank" rel="noopener noreferrer" style={{ color: '#1a1a1a', fontWeight: 700 }}>Salamander carpentry systems</a>.
+              We offer <strong style={{ fontWeight: 600 }}>real estate consultancy</strong> for apartment sales in own and partner residential complexes.<br />
+              We provide <strong style={{ fontWeight: 600 }}>feasibility studies</strong> for real estate development management, marketing plans and project management.<br />
+              We provide <strong style={{ fontWeight: 600 }}>consultancy in design, architecture, interior design</strong> and landscaping for new residential complexes.<br />
+              We offer <strong style={{ fontWeight: 600 }}>crowdfunding services</strong>, as well as <strong style={{ fontWeight: 600 }}>financing consultancy</strong> for bank and non-bank credit.<br />
+              We have wide regional coverage in supplying <a href="https://www.neofort-biz.ro/ro" target="_blank" rel="noopener noreferrer" style={{ color: '#1a1a1a', fontWeight: 600 }}>Salamander carpentry systems</a>.
             </>
           )}
         </div>
       </section>
 
-      {/* Grid 3 coloane × 2 rânduri — carduri cu imagine background + text overlay jos */}
+      {/* Grid 3×2 — imagine background, text ALINIAT SUS cu padding-top fix */}
       <section style={{ background: '#f7f7f5', padding: '0 80px 80px' }}>
         <div style={{
           display: 'grid',
@@ -164,15 +138,12 @@ export default async function ServiciiPage({ params }) {
               aria-labelledby={`svc-${i}`}
               style={{
                 position: 'relative',
-                minHeight: 840,
+                height: 840,          /* înălțime fixă egală pe toate cardurile */
                 overflow: 'hidden',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'flex-end',
                 background: '#1a1a1a',
               }}
             >
-              {/* Imagine background */}
+              {/* Imagine background, opacity 0.75 exact ca originalul */}
               <Image
                 src={service.img}
                 alt={service.imgAlt}
@@ -182,47 +153,46 @@ export default async function ServiciiPage({ params }) {
                 style={{ objectFit: 'cover', opacity: 0.75 }}
               />
 
-              {/* Overlay gradient jos */}
+              {/* Text aliniat SUS — padding-top 338px exact ca Wix margin-top din CSS original */}
               <div style={{
                 position: 'absolute',
-                inset: 0,
-                background: 'linear-gradient(to bottom, rgba(0,0,0,0) 30%, rgba(0,0,0,0.6) 100%)',
-              }} aria-hidden="true" />
-
-              {/* Text jos */}
-              <div style={{
-                position: 'relative',
-                zIndex: 1,
-                padding: '40px 40px 41px',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                padding: '338px 40px 41px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'flex-start',
               }}>
                 <h2
                   id={`svc-${i}`}
                   style={{
-                    fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+                    fontFamily: F,
                     fontSize: 18,
-                    fontWeight: 700,
+                    fontWeight: 400,
                     color: '#fff',
                     letterSpacing: '0.02em',
                     marginBottom: 14,
-                    lineHeight: 1.4,
+                    lineHeight: 1.75,
                   }}
                 >
                   {service.title}
                 </h2>
                 <p style={{
-                  fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+                  fontFamily: F,
                   fontSize: 14,
-                  fontWeight: 700,
+                  fontWeight: 400,
                   color: '#fff',
                   lineHeight: 1.79,
-                  marginBottom: 12,
+                  marginBottom: 14,
                 }}>
                   {service.subtitle}
                 </p>
                 <p style={{
-                  fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+                  fontFamily: F,
                   fontSize: 14,
-                  fontWeight: 700,
+                  fontWeight: 300,
                   color: '#fff',
                   lineHeight: 1.79,
                 }}>
