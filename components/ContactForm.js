@@ -42,13 +42,12 @@ export default function ContactForm({ locale }) {
     <form onSubmit={handleSubmit}>
       <input name="nume"    type="text"  required placeholder={isRo ? 'Nume'    : 'Name'}    style={field} />
       <input name="email"   type="email" required placeholder="Email"                         style={field} />
-      <input name="telefon" type="tel"            placeholder={isRo ? 'Telefon' : 'Phone'}   style={field} />
-      <input name="subiect" type="text"            placeholder={isRo ? 'Subiect' : 'Subject'} style={field} />
+      <input name="telefon" type="tel"   required placeholder={isRo ? 'Telefon' : 'Phone'}   style={field} />
+      <input name="subiect" type="text"  required placeholder={isRo ? 'Subiect' : 'Subject'} style={field} />
       <textarea
         name="mesaj"
-        required
         rows={5}
-        placeholder={isRo ? 'Mesaj' : 'Message'}
+        placeholder={isRo ? 'Mesaj (optional)' : 'Message (optional)'}
         style={{ ...field, resize: 'vertical', marginBottom: 20 }}
       />
 
