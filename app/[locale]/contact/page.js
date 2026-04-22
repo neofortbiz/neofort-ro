@@ -111,7 +111,7 @@ export default async function ContactPage({ params }) {
               />
             </div>
             <div style={{ padding: '24px 30px', textAlign: 'center' }}>
-              <h2 style={{ fontFamily: F, fontSize: 15, fontWeight: 300, color: '#1a1a1a', letterSpacing: '0.08em', marginBottom: 20 }}>
+              <h2 style={{ fontFamily: F, fontSize: 15, fontWeight: 300, color: '#1a1a1a', letterSpacing: '0.08em', marginBottom: 20, textAlign: 'center', width: '100%' }}>
                 {card.title}
               </h2>
               <a

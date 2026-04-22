@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '../../i18n/routing';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import CookieConsent from '../../components/CookieConsent';
 import '../globals.css';
 
 const BASE = 'https://www.neofort.ro';
@@ -48,6 +49,7 @@ export default async function LocaleLayout({ children, params }) {
           <Header locale={locale} />
           <main>{children}</main>
           <Footer locale={locale} />
+          <CookieConsent locale={locale} />
         </NextIntlClientProvider>
       </body>
     </html>

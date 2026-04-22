@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
+import { Link } from '../../i18n/navigation';
 
 const BASE = 'https://www.neofort.ro';
 const F = 'Helvetica Neue, Helvetica, Arial, sans-serif';
@@ -54,7 +55,8 @@ export default async function HomePage({ params }) {
       title: t('despre_title'),
       text: t('despre_text'),
       btn: t('despre_btn'),
-      href: 'https://www.ansamblu-rezidential-nou.ro/despre-neofort',
+      href: '/despre-noi',
+      internal: true,
       img: '/images/despre-noi.avif',
       imgAlt: isRo ? 'NEOFORT proiecte rezidentiale Bucuresti' : 'NEOFORT residential projects Bucharest',
       ariaLabel: isRo ? 'Mai multe detalii despre NEOFORT' : 'More details about NEOFORT',
@@ -187,7 +189,7 @@ export default async function HomePage({ params }) {
       </section>
 
       {sectiuni.map((item, i) => (
-        <section key={i} aria-labelledby={`section-${i}`} style={{ background: i % 2 === 0 ? '#f7f7f5' : '#fff', padding: '0 0 60px' }}>
+        <section key={i} aria-labelledby={`section-${i}`} style={{ background: i % 2 === 0 ? '#f7f7f5' : '#fff', padding: i === 0 ? '40px 0 60px' : '0 0 60px' }}>
           <div style={{ maxWidth: 980, margin: '0 auto', padding: '0 20px' }}>
             <div style={{ position: 'relative', width: '100%', height: 400, marginBottom: 32 }}>
               <Image
@@ -205,14 +207,15 @@ export default async function HomePage({ params }) {
             <p className="section-text" style={{ fontFamily: F, fontWeight: 300, color: '#4a4a4a', lineHeight: 1.75, marginBottom: 24, maxWidth: 760 }}>
               {item.text}
             </p>
-            <a
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={item.ariaLabel}
-              style={{ display: 'inline-block', padding: '12px 32px', border: '1px solid #1a1a1a', fontFamily: F, fontSize: 15, fontWeight: 300, color: '#1a1a1a', letterSpacing: '0.05em', borderRadius: 100, textDecoration: 'none' }}
-            >
-              {item.btn}
+            {item.internal ? (
+              <Link href={item.href} locale={locale} aria-label={item.ariaLabel} style={{ display: 'inline-block', padding: '12px 32px', border: '1px solid #1a1a1a', fontFamily: F, fontSize: 15, fontWeight: 300, color: '#1a1a1a', letterSpacing: '0.05em', borderRadius: 100, textDecoration: 'none' }}>
+                {item.btn}
+              </Link>
+            ) : (
+              <a href={item.href} target="_blank" rel="noopener noreferrer" aria-label={item.ariaLabel} style={{ display: 'inline-block', padding: '12px 32px', border: '1px solid #1a1a1a', fontFamily: F, fontSize: 15, fontWeight: 300, color: '#1a1a1a', letterSpacing: '0.05em', borderRadius: 100, textDecoration: 'none' }}>
+                {item.btn}
+              </a>
+            )}
             </a>
           </div>
         </section>
