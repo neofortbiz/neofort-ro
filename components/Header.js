@@ -74,7 +74,14 @@ export default function Header({ locale }) {
                 href={pathname}
                 locale={l}
                 aria-label={FLAG_LABELS[l]}
-                style={{ display: 'inline-flex', alignItems: 'center', textDecoration: 'none', opacity: 0.85, transition: 'opacity 0.2s' }}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: 44,
+                  height: 44,
+                  textDecoration: 'none',
+                }}
               >
                 <img
                   src={`/flags/${l}.svg`}
