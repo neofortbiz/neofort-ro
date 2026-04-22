@@ -44,7 +44,8 @@ export async function POST(request) {
               Str. Theodor Aman Pictor 11, sector 1, Bucuresti<br/>
               Tel: +40 21 528 0660<br/>
               <a href="https://www.neofort.ro" style="color: #1a1a1a;">www.neofort.ro</a> |
-              <a href="https://www.neofort-biz.ro" style="color: #1a1a1a;">www.neofort-biz.ro</a>
+              <a href="https://www.neofort-biz.ro" style="color: #1a1a1a;">www.neofort-biz.ro</a> |
+              <a href="https://www.ansamblu-rezidential-nou.ro" style="color: #1a1a1a;">www.ansamblu-rezidential-nou.ro</a>
             </p>
           </div>
         </div>
