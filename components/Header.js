@@ -79,7 +79,7 @@ export default function Header({ locale }) {
                 <img
                   src={`/flags/${l}.svg`}
                   alt={FLAG_LABELS[l]}
-                  width={28}
+                  width={30}
                   height={20}
                   style={{ display: 'block', borderRadius: 2, border: '1px solid #e0e0e0' }}
                 />
