@@ -105,3 +105,20 @@ a { text-decoration: none; }
     height: 480px !important;
   }
 }
+
+/* ===== TEXT JUSTIFY ===== */
+.section-text { text-align: justify; }
+.hero-text { text-align: center; }
+
+/* ===== JUSTIFY GLOBAL PE TOATE PAGINILE ===== */
+main p {
+  text-align: justify;
+}
+main h1, main h2, main h3 {
+  text-align: left;
+}
+/* Exceptii centrate */
+.hero-content p,
+.text-center p {
+  text-align: center !important;
+}

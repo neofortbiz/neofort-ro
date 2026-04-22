@@ -79,7 +79,7 @@ export default async function DesprePage({ params }) {
         <h1 style={{ fontFamily: F, fontSize: 28, fontWeight: 200, color: '#1a1a1a', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 24 }}>
           {title}
         </h1>
-        <p style={{ fontFamily: F, fontSize: 16, fontWeight: 300, color: '#4a4a4a', lineHeight: 1.9, maxWidth: 780, margin: '0 auto' }}>
+        <p style={{ fontFamily: F, fontSize: 16, fontWeight: 300, color: '#4a4a4a', lineHeight: 1.9, maxWidth: 780, margin: '0 auto', textAlign: 'justify' }}>
           {intro}
         </p>
       </section>
@@ -94,7 +94,7 @@ export default async function DesprePage({ params }) {
               <p style={{ fontFamily: F, fontSize: 12, fontWeight: 300, color: '#999', letterSpacing: '0.05em', marginBottom: 16 }}>
                 {e.cui}
               </p>
-              <p style={{ fontFamily: F, fontSize: 15, fontWeight: 300, color: '#4a4a4a', lineHeight: 1.8, marginBottom: 20, maxWidth: 720 }}>
+              <p style={{ fontFamily: F, fontSize: 15, fontWeight: 300, color: '#4a4a4a', lineHeight: 1.8, marginBottom: 20, maxWidth: 720, textAlign: 'justify' }}>
                 {e.desc}
               </p>
               <div style={{ display: 'flex', gap: 16 }}>

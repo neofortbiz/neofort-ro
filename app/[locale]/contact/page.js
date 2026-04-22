@@ -86,7 +86,7 @@ export default async function ContactPage({ params }) {
         <h1 style={{ fontFamily: F, fontSize: 20, fontWeight: 300, color: '#1a1a1a', letterSpacing: '0.08em', marginBottom: 30 }}>
           {titleMain}
         </h1>
-        <p style={{ fontFamily: F, fontSize: 14, fontWeight: 300, color: '#1a1a1a', lineHeight: 1.9, maxWidth: 860, margin: '0 auto 16px' }}>
+        <p style={{ fontFamily: F, fontSize: 14, fontWeight: 300, color: '#1a1a1a', lineHeight: 1.9, maxWidth: 860, margin: '0 auto 16px', textAlign: 'justify' }}>
           {introText}
         </p>
         <p style={{ fontFamily: F, fontSize: 14, fontWeight: 300, color: '#1a1a1a' }}>
