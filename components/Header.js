@@ -4,10 +4,10 @@ import { Link, usePathname } from '../i18n/navigation';
 import { useState } from 'react';
 import Image from 'next/image';
 
-const FLAGS = {
-  ro: '🇷🇴',
-  en: '🇬🇧',
-  uk: '🇺🇦',
+const FLAG_LABELS = {
+  ro: 'Română',
+  en: 'English',
+  uk: 'Українська',
 };
 
 export default function Header({ locale }) {
@@ -67,23 +67,22 @@ export default function Header({ locale }) {
           ))}
 
           {/* Drapele pentru switch limba */}
-          <div style={{ display: 'flex', gap: 6 }} aria-label="Selectare limba">
+          <div style={{ display: 'flex', gap: 8 }} aria-label="Selectare limba">
             {otherLocales.map(l => (
               <Link
                 key={l}
                 href={pathname}
                 locale={l}
-                aria-label={l === 'ro' ? 'Română' : l === 'uk' ? 'Українська' : 'English'}
-                style={{
-                  fontSize: 22,
-                  lineHeight: 1,
-                  textDecoration: 'none',
-                  opacity: 0.85,
-                  transition: 'opacity 0.2s',
-                  cursor: 'pointer',
-                }}
+                aria-label={FLAG_LABELS[l]}
+                style={{ display: 'inline-flex', alignItems: 'center', textDecoration: 'none', opacity: 0.85, transition: 'opacity 0.2s' }}
               >
-                {FLAGS[l]}
+                <img
+                  src={`/flags/${l}.svg`}
+                  alt={FLAG_LABELS[l]}
+                  width={28}
+                  height={20}
+                  style={{ display: 'block', borderRadius: 2, border: '1px solid #e0e0e0' }}
+                />
               </Link>
             ))}
           </div>
