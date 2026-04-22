@@ -91,3 +91,17 @@ a { text-decoration: none; }
   .section-title { font-size: clamp(18px, 5vw, 28px); }
   .section-text { font-size: 15px; }
 }
+
+/* ===== SERVICII MOBILE ===== */
+@media (max-width: 768px) {
+  .servicii-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 0 16px !important;
+  }
+  .servicii-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 480px !important;
+  }
+}

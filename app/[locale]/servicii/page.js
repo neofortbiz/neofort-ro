@@ -112,6 +112,7 @@ export default async function ServiciiPage({ params }) {
   const Card = ({ service, index }) => (
     <article
       aria-labelledby={`svc-${index}`}
+      className="servicii-card"
       style={{ position: 'relative', width: service.width, height: 840, flexShrink: 0, overflow: 'hidden', background: '#1a1a1a' }}
     >
       <Image
@@ -170,10 +171,10 @@ export default async function ServiciiPage({ params }) {
         </div>
       </section>
       <section style={{ background: '#f7f7f5', padding: '30px 0 0' }}>
-        <div style={{ display: 'flex', gap: 30, justifyContent: 'center' }}>
+        <div className="servicii-row" style={{ display: 'flex', gap: 30, justifyContent: 'center' }}>
           {row1.map((service, i) => <Card key={i} service={service} index={i} />)}
         </div>
-        <div style={{ display: 'flex', gap: 30, justifyContent: 'center', paddingTop: 30, paddingBottom: 30 }}>
+        <div className="servicii-row" style={{ display: 'flex', gap: 30, justifyContent: 'center', paddingTop: 30, paddingBottom: 30 }}>
           {row2.map((service, i) => <Card key={i + 3} service={service} index={i + 3} />)}
         </div>
       </section>
