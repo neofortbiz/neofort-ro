@@ -43,7 +43,7 @@ export default async function LocaleLayout({ children, params }) {
 
   return (
     <html lang={locale}>
-      <body>
+      <body style={{ overflowX: 'hidden', maxWidth: '100vw' }}>
         <NextIntlClientProvider messages={messages}>
           <Header locale={locale} />
           <main>{children}</main>

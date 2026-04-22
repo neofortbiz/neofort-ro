@@ -14,7 +14,7 @@ export default function Footer({ locale }) {
   const country = isUk ? 'Румунія' : 'Romania';
 
   return (
-    <footer role="contentinfo">
+    <footer role="contentinfo" style={{ width: '100%', boxSizing: 'border-box', overflowX: 'hidden' }}>
       <div style={{ background: '#e8f1f2', padding: '56px 20px 52px', textAlign: 'center' }}>
         <h2 style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif', fontSize: 14, fontWeight: 600, color: '#1a1a1a', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 24 }}>
           {program.title}

@@ -174,7 +174,7 @@ export default async function HomePage({ params }) {
         />
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.52)' }} />
         <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', padding: '60px 20px', maxWidth: 860 }}>
-          <h1 style={{ fontFamily: F, fontSize: 72, fontWeight: 300, color: '#fff', letterSpacing: '0.12em', lineHeight: 1.2, marginBottom: 16 }}>
+          <h1 style={{ fontFamily: F, fontSize: 'clamp(36px, 12vw, 72px)', fontWeight: 300, color: '#fff', letterSpacing: '0.12em', lineHeight: 1.2, marginBottom: 16 }}>
             NEOFORT
           </h1>
           <p style={{ fontFamily: F, fontSize: 20, fontWeight: 300, color: '#fff', letterSpacing: '0.05em', marginBottom: 28 }}>
