@@ -4,6 +4,7 @@ export default function sitemap() {
   const pages = [
     { ro: '', en: '', priority: 1.0, changeFrequency: 'weekly' },
     { ro: '/servicii', en: '/services', priority: 0.8, changeFrequency: 'monthly' },
+    { ro: '/despre-noi', en: '/despre-noi', priority: 0.7, changeFrequency: 'monthly' },
     { ro: '/contact', en: '/contact', priority: 0.8, changeFrequency: 'monthly' },
     { ro: '/gdpr', en: '/gdpr', priority: 0.3, changeFrequency: 'yearly' },
   ];
