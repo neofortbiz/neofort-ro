@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import ContactForm from '../../../components/ContactForm';
 
 const BASE = 'https://www.neofort.ro';
@@ -9,7 +10,7 @@ export async function generateMetadata({ params }) {
   return {
     title: isRo ? 'Contact NEOFORT | Bucuresti' : 'Contact NEOFORT | Bucharest',
     description: isRo
-      ? 'Contactati NEOFORT pentru consultanta imobiliara, tamplarie PVC si aluminiu, crowdfunding si finantare. Str. Theodor Aman Pictor 11, sector 1, Bucuresti.'
+      ? 'Contactati NEOFORT pentru consultanta imobiliara, tamplarie PVC si aluminiu, crowdfunding si finantare.'
       : 'Contact NEOFORT for real estate consultancy, PVC and aluminium carpentry, crowdfunding and financing.',
     alternates: {
       canonical: `${BASE}/${locale}/contact`,
@@ -23,47 +24,122 @@ export default async function ContactPage({ params }) {
   const { locale } = await params;
   const isRo = locale === 'ro';
 
+  const carduri = [
+    {
+      title: isRo ? 'CONSULTANTA IMOBILIARA' : 'REAL ESTATE CONSULTANCY',
+      img: '/images/Consultanta_Imobiliara.avif',
+      imgAlt: 'NEOFORT Consultanta Imobiliara',
+    },
+    {
+      title: isRo ? 'CROWDFUNDING' : 'CROWDFUNDING',
+      img: '/images/NEOFORT_CROWDFUNDING.avif',
+      imgAlt: 'NEOFORT Crowdfunding',
+    },
+    {
+      title: isRo ? 'CONSTRUCTIE SI PROIECTARE' : 'CONSTRUCTION & DESIGN',
+      img: '/images/Neofort_constructie_si_proiectare.avif',
+      imgAlt: 'NEOFORT Constructie si Proiectare',
+    },
+    {
+      title: isRo ? 'CREDITARE BANCARA SI NEBANCARA' : 'BANK & NON-BANK FINANCING',
+      img: '/images/Finantare_bancara_si_nebancara.avif',
+      imgAlt: 'NEOFORT Creditare Bancara',
+    },
+    {
+      title: isRo ? 'TAMPLARIE ALUMINIU SI TERMOPANE PVC' : 'ALUMINIUM & PVC CARPENTRY',
+      img: '/images/TAMPLARIE_Aluminiu_si_TERMOPANE_PVC.avif',
+      imgAlt: 'NEOFORT Tamplarie',
+    },
+  ];
+
   return (
     <div style={{ background: '#e8f1f2', minHeight: '100vh' }}>
 
-      {/* Sectiunea cu titlu, text, adresa, formular */}
-      <div style={{ maxWidth: 980, margin: '0 auto', padding: '60px 20px 0' }}>
-
-        {/* Titlu aliniat stanga */}
-        <h1 style={{
-          fontFamily: F,
-          fontSize: 20,
-          fontWeight: 300,
-          color: '#1a1a1a',
-          letterSpacing: '0.05em',
-          marginBottom: 30,
-        }}>
+      {/* Titlu + intro centrat */}
+      <div style={{ maxWidth: 980, margin: '0 auto', padding: '80px 20px 60px', textAlign: 'center' }}>
+        <h1 style={{ fontFamily: F, fontSize: 20, fontWeight: 300, color: '#1a1a1a', letterSpacing: '0.08em', marginBottom: 30 }}>
           {isRo ? 'CONTACTATI UN REPREZENTANT NEOFORT' : 'CONTACT A NEOFORT REPRESENTATIVE'}
         </h1>
-
-        {/* Text intro */}
-        <p style={{ fontFamily: F, fontSize: 14, fontWeight: 300, color: '#1a1a1a', lineHeight: 1.9, marginBottom: 10, maxWidth: 860 }}>
+        <p style={{ fontFamily: F, fontSize: 14, fontWeight: 300, color: '#1a1a1a', lineHeight: 1.9, maxWidth: 860, margin: '0 auto 16px' }}>
           {isRo
             ? 'Neofort este un brand asociat cu mai multe domenii de activitate. In aceasta sectiune puteti contacta direct un reprezentant in functie de specificul informatiei solicitate. Prin aceasta sectiune incercam sa devenim mai operativi in receptionarea solicitarilor dumneavoastra.'
             : 'Neofort is a brand associated with multiple fields of activity. In this section you can directly contact a representative depending on the specific information requested.'}
         </p>
-
-        {/* Adresa + telefoane pe un rand */}
-        <p style={{ fontFamily: F, fontSize: 13, fontWeight: 300, color: '#1a1a1a', lineHeight: 1.8, marginBottom: 40 }}>
-          {isRo
-            ? 'Sediu - Str. Theodor Aman Pictor 11, sector 1, Bucuresti.'
-            : 'Headquarters - 11 Theodor Aman Pictor St., sector 1, Bucharest.'}
-          {' '}Tel.{' '}
-          <a href="tel:+40215280660" style={{ color: '#1a1a1a', textDecoration: 'none', fontWeight: 300 }}>+4021528060</a>
-          {'  '}
-          <a href="tel:+40758090904" style={{ color: '#1a1a1a', textDecoration: 'none', fontWeight: 300 }}>+04758090904</a>
-          {'  '}
-          <a href="tel:+40759030999" style={{ color: '#1a1a1a', textDecoration: 'none', fontWeight: 300 }}>+40759030999</a>
-          {'  '}
-          <a href="tel:+40752443435" style={{ color: '#1a1a1a', textDecoration: 'none', fontWeight: 300 }}>+40752443435</a>
+        <p style={{ fontFamily: F, fontSize: 14, fontWeight: 300, color: '#1a1a1a' }}>
+          <a href="tel:+40215280660" style={{ color: '#1a1a1a', textDecoration: 'none' }}>+4021528060</a>
+          {'    '}
+          <a href="tel:+40215280661" style={{ color: '#1a1a1a', textDecoration: 'none' }}>+40215280661</a>
         </p>
+      </div>
 
-        {/* Formular */}
+      {/* Carduri servicii cu buton Contact — identice ca layout cu Servicii */}
+      <div style={{ background: '#e8f1f2', padding: '0 0 30px' }}>
+        {/* Rand 1 — primele 3 carduri */}
+        <div style={{ display: 'flex', gap: 30, justifyContent: 'center', marginBottom: 30 }}>
+          {carduri.slice(0, 3).map((card, i) => (
+            <div key={i} style={{ position: 'relative', width: 306, height: 500, flexShrink: 0, overflow: 'hidden', background: '#1a1a1a' }}>
+              <Image src={card.img} alt={card.imgAlt} fill loading="eager" sizes="306px" style={{ objectFit: 'cover', opacity: 0.75 }} />
+              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '0 30px 40px' }}>
+                <h2 style={{ fontFamily: F, fontSize: 16, fontWeight: 400, color: '#fff', letterSpacing: '0.02em', lineHeight: 1.5, marginBottom: 20 }}>
+                  {card.title}
+                </h2>
+                <a href={`mailto:office@neofort.ro?subject=${encodeURIComponent(card.title)}`} style={{
+                  display: 'inline-block',
+                  padding: '10px 28px',
+                  border: '1px solid #fff',
+                  fontFamily: F,
+                  fontSize: 13,
+                  fontWeight: 300,
+                  color: '#fff',
+                  letterSpacing: '0.05em',
+                  borderRadius: 100,
+                  textDecoration: 'none',
+                  width: 'fit-content',
+                }}>
+                  Contact
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Rand 2 — ultimele 2 carduri */}
+        <div style={{ display: 'flex', gap: 30, justifyContent: 'center' }}>
+          {carduri.slice(3).map((card, i) => (
+            <div key={i} style={{ position: 'relative', width: 306, height: 500, flexShrink: 0, overflow: 'hidden', background: '#1a1a1a' }}>
+              <Image src={card.img} alt={card.imgAlt} fill loading="lazy" sizes="306px" style={{ objectFit: 'cover', opacity: 0.75 }} />
+              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '0 30px 40px' }}>
+                <h2 style={{ fontFamily: F, fontSize: 16, fontWeight: 400, color: '#fff', letterSpacing: '0.02em', lineHeight: 1.5, marginBottom: 20 }}>
+                  {card.title}
+                </h2>
+                <a href={`mailto:office@neofort.ro?subject=${encodeURIComponent(card.title)}`} style={{
+                  display: 'inline-block',
+                  padding: '10px 28px',
+                  border: '1px solid #fff',
+                  fontFamily: F,
+                  fontSize: 13,
+                  fontWeight: 300,
+                  color: '#fff',
+                  letterSpacing: '0.05em',
+                  borderRadius: 100,
+                  textDecoration: 'none',
+                  width: 'fit-content',
+                }}>
+                  Contact
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Formular + adresa */}
+      <div style={{ maxWidth: 980, margin: '0 auto', padding: '60px 20px 0' }}>
+        <p style={{ fontFamily: F, fontSize: 13, fontWeight: 300, color: '#1a1a1a', marginBottom: 30 }}>
+          Sediu - Str. Theodor Aman Pictor 11, sector 1, Bucuresti. Tel. +4021528060 +04758090904 +40759030999 +40752443435
+          {'  '}
+          <a href="/ro/gdpr" style={{ color: '#1a1a1a', fontWeight: 400 }}>Politica GDPR</a>
+        </p>
         <ContactForm locale={locale} />
       </div>
 
@@ -81,17 +157,9 @@ export default async function ContactPage({ params }) {
         />
       </div>
 
-      {/* Program centrat */}
+      {/* Program */}
       <div style={{ textAlign: 'center', padding: '60px 20px 80px' }}>
-        <h2 style={{
-          fontFamily: F,
-          fontSize: 18,
-          fontWeight: 300,
-          color: '#1a1a1a',
-          letterSpacing: '0.1em',
-          textTransform: 'uppercase',
-          marginBottom: 20,
-        }}>
+        <h2 style={{ fontFamily: F, fontSize: 18, fontWeight: 300, color: '#1a1a1a', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 20 }}>
           PROGRAM
         </h2>
         <p style={{ fontFamily: F, fontSize: 14, fontWeight: 300, color: '#1a1a1a', lineHeight: 2 }}>
