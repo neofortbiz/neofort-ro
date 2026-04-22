@@ -72,73 +72,52 @@ export default async function ContactPage({ params }) {
         </p>
       </div>
 
-      {/* Carduri servicii cu buton Contact — identice ca layout cu Servicii */}
-      <div style={{ background: '#e8f1f2', padding: '0 0 30px' }}>
-        {/* Rand 1 — primele 3 carduri */}
-        <div style={{ display: 'flex', gap: 30, justifyContent: 'center', marginBottom: 30 }}>
-          {carduri.slice(0, 3).map((card, i) => (
-            <div key={i} style={{ position: 'relative', width: 306, height: 500, flexShrink: 0, overflow: 'hidden', background: '#1a1a1a' }}>
-              <Image src={card.img} alt={card.imgAlt} fill loading="eager" sizes="306px" style={{ objectFit: 'cover', opacity: 0.75 }} />
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '0 30px 40px' }}>
-                <h2 style={{ fontFamily: F, fontSize: 16, fontWeight: 400, color: '#fff', letterSpacing: '0.02em', lineHeight: 1.5, marginBottom: 20 }}>
-                  {card.title}
-                </h2>
-                <a href={`mailto:office@neofort.ro?subject=${encodeURIComponent(card.title)}`} style={{
+      {/* Carduri landscape — imagine sus, titlu + buton Contact jos pe fond alb */}
+      <div style={{ maxWidth: 980, margin: '0 auto', padding: '0 20px 60px', display: 'flex', flexDirection: 'column', gap: 0 }}>
+        {carduri.map((card, i) => (
+          <div key={i} style={{ background: '#fff', marginBottom: 2 }}>
+            {/* Imagine landscape */}
+            <div style={{ position: 'relative', width: '100%', height: 340 }}>
+              <Image
+                src={card.img}
+                alt={card.imgAlt}
+                fill
+                loading={i < 2 ? 'eager' : 'lazy'}
+                sizes="980px"
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
+            {/* Titlu + buton */}
+            <div style={{ padding: '24px 30px', textAlign: 'center' }}>
+              <h2 style={{ fontFamily: F, fontSize: 15, fontWeight: 300, color: '#1a1a1a', letterSpacing: '0.08em', marginBottom: 20 }}>
+                {card.title}
+              </h2>
+              <a
+                href={`mailto:office@neofort.ro?subject=${encodeURIComponent(card.title)}`}
+                style={{
                   display: 'inline-block',
-                  padding: '10px 28px',
-                  border: '1px solid #fff',
+                  padding: '10px 32px',
+                  border: '1px solid #1a1a1a',
                   fontFamily: F,
                   fontSize: 13,
                   fontWeight: 300,
-                  color: '#fff',
+                  color: '#1a1a1a',
                   letterSpacing: '0.05em',
                   borderRadius: 100,
                   textDecoration: 'none',
-                  width: 'fit-content',
-                }}>
-                  Contact
-                </a>
-              </div>
+                }}
+              >
+                Contact
+              </a>
             </div>
-          ))}
-        </div>
-
-        {/* Rand 2 — ultimele 2 carduri */}
-        <div style={{ display: 'flex', gap: 30, justifyContent: 'center' }}>
-          {carduri.slice(3).map((card, i) => (
-            <div key={i} style={{ position: 'relative', width: 306, height: 500, flexShrink: 0, overflow: 'hidden', background: '#1a1a1a' }}>
-              <Image src={card.img} alt={card.imgAlt} fill loading="lazy" sizes="306px" style={{ objectFit: 'cover', opacity: 0.75 }} />
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '0 30px 40px' }}>
-                <h2 style={{ fontFamily: F, fontSize: 16, fontWeight: 400, color: '#fff', letterSpacing: '0.02em', lineHeight: 1.5, marginBottom: 20 }}>
-                  {card.title}
-                </h2>
-                <a href={`mailto:office@neofort.ro?subject=${encodeURIComponent(card.title)}`} style={{
-                  display: 'inline-block',
-                  padding: '10px 28px',
-                  border: '1px solid #fff',
-                  fontFamily: F,
-                  fontSize: 13,
-                  fontWeight: 300,
-                  color: '#fff',
-                  letterSpacing: '0.05em',
-                  borderRadius: 100,
-                  textDecoration: 'none',
-                  width: 'fit-content',
-                }}>
-                  Contact
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
 
-      {/* Formular + adresa */}
-      <div style={{ maxWidth: 980, margin: '0 auto', padding: '60px 20px 0' }}>
+      {/* Formular */}
+      <div style={{ maxWidth: 980, margin: '0 auto', padding: '0 20px 0' }}>
         <p style={{ fontFamily: F, fontSize: 13, fontWeight: 300, color: '#1a1a1a', marginBottom: 30 }}>
           Sediu - Str. Theodor Aman Pictor 11, sector 1, Bucuresti. Tel. +4021528060 +04758090904 +40759030999 +40752443435
-          {'  '}
-          <a href="/ro/gdpr" style={{ color: '#1a1a1a', fontWeight: 400 }}>Politica GDPR</a>
         </p>
         <ContactForm locale={locale} />
       </div>
