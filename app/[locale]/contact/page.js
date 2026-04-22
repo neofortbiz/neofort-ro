@@ -129,6 +129,9 @@ export default async function ContactPage({ params }) {
 
       {/* Formular */}
       <div style={{ maxWidth: 980, margin: '0 auto', padding: '0 20px 0' }}>
+        <h2 style={{ fontFamily: F, fontSize: 18, fontWeight: 200, color: '#1a1a1a', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 24 }}>
+          {isRo ? 'TRIMITE UN MESAJ' : isUk ? 'НАДІСЛАТИ ПОВІДОМЛЕННЯ' : 'SEND A MESSAGE'}
+        </h2>
         <p style={{ fontFamily: F, fontSize: 13, fontWeight: 300, color: '#1a1a1a', marginBottom: 30 }}>{addressText}</p>
         <ContactForm locale={locale} />
       </div>
