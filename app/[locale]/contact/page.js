@@ -147,15 +147,7 @@ export default async function ContactPage({ params }) {
         />
       </div>
 
-      {/* Program */}
-      <div style={{ textAlign: 'center', padding: '60px 20px 80px' }}>
-        <h2 style={{ fontFamily: F, fontSize: 18, fontWeight: 300, color: '#1a1a1a', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 20 }}>
-          {programTitle}
-        </h2>
-        <p style={{ fontFamily: F, fontSize: 14, fontWeight: 300, color: '#1a1a1a', lineHeight: 2 }}>
-          {programLV}<br />{programSD}
-        </p>
-      </div>
+      <div style={{ paddingBottom: 40 }} />
 
     </div>
   );
