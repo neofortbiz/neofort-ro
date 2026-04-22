@@ -40,7 +40,7 @@ export default async function ServiciiPage({ params }) {
         : isUk
         ? 'За останні 5 років наш портфель клієнтів складався з покупців та інвесторів, які надавали нам стабільну довіру. Більшість наших клієнтів купували нерухомість за достатньо знижченими цінами, що багато хто обирав перепродаж замість оренди.'
         : 'Over the last 5 years our client portfolio consisted of buyers and investors who gave us consistent trust. Most clients purchased at sufficiently discounted prices that many chose resale over renting.',
-      img: '/images/Consultanta_Imobiliara.avif',
+      img: '/images/NEOFORT_CONSULTANTA_IMOBILIARA.avif',
       imgAlt: isRo ? 'NEOFORT consultanta imobiliara Bucuresti' : 'NEOFORT real estate consultancy Bucharest',
       width: 306,
     },
@@ -52,7 +52,7 @@ export default async function ServiciiPage({ params }) {
         : isUk
         ? 'Ми надаємо консультації з управління проектами та техніко-економічні обґрунтування для партнерів-забудовників та інвесторів. На конкурентному ринку ретельний аналіз адресованості та економічної доцільності проекту вирішальним чином гарантує успіх.'
         : 'We provide project management consultancy and feasibility studies for developers and partner investors. In a competitive market, careful study of addressability and economic feasibility decisively guarantees the success of a real estate development.',
-      img: '/images/Studii_de_fezabilitate.avif',
+      img: '/images/NEOFORT_STUDII_DE_FEZABILITATE.avif',
       imgAlt: isRo ? 'NEOFORT studii fezabilitate proiecte imobiliare' : 'NEOFORT feasibility studies real estate projects',
       width: 307,
     },
@@ -64,7 +64,7 @@ export default async function ServiciiPage({ params }) {
         : isUk
         ? 'Досвідчені гравці на ринку нерухомості найкраще знають роль проектування та будівництва. Ми пропонуємо партнерські рішення для складних вимог до архітектурного проектування, інтер\'єрного дизайну та координації виконання.'
         : 'Experienced players in real estate development know best the role of design and construction. We offer partnership solutions for complex architectural design, interior design and execution coordination.',
-      img: '/images/Neofort_constructie_si_proiectare.avif',
+      img: '/images/NEOFORT_PROIECTARE_ARHITECTURA.avif',
       imgAlt: isRo ? 'NEOFORT constructie si proiectare imobiliara' : 'NEOFORT construction and architectural design',
       width: 307,
     },
@@ -79,7 +79,7 @@ export default async function ServiciiPage({ params }) {
         : isUk
         ? 'Ми забезпечуємо стабільне фінансування для забудовників через краудфандинг. Ця система гарантує реальне рішення для легко керованого кредитування, розподіляючи вигоди між позичальником та кредитором, усуваючи посередників.'
         : 'We provide consistent financing for developers through crowdfunding. This system guarantees a tangible, easily manageable credit solution, sharing benefits between borrower and lender, eliminating intermediaries.',
-      img: '/images/NEOFORT_CROWDFUNDING.avif',
+      img: '/images/NEOFORT_FINANTARE_PRIN_CROWDFUNDING.avif',
       imgAlt: isRo ? 'NEOFORT finantare crowdfunding imobiliar' : 'NEOFORT crowdfunding real estate financing',
       width: 306,
     },
@@ -91,7 +91,7 @@ export default async function ServiciiPage({ params }) {
         : isUk
         ? 'Підтримка клієнтів та інвесторів у отриманні банківського та небанківського фінансування надається на вищому рівні конкурентоспроможності. Через партнерів, безпосередньо пов\'язаних з банками та НФУ, ми знаходимо рішення навіть для складних ситуацій.'
         : 'Support for clients in obtaining bank and non-bank financing at superior competitiveness. Through partners directly connected with banks and NBFIs, we find solutions even for complicated situations.',
-      img: '/images/Finantare_bancara_si_nebancara.avif',
+      img: '/images/NEOFORT_CREDITARE_BANCARA_SI_NEBANCARA.avif',
       imgAlt: isRo ? 'NEOFORT creditare bancara nebancara' : 'NEOFORT bank non-bank financing',
       width: 307,
     },
@@ -103,7 +103,7 @@ export default async function ServiciiPage({ params }) {
         : isUk
         ? 'Ми активні у сфері постачання та монтажу вікон ПВХ та алюмінію з 2005 року. З часом ми стали помітним постачальником вікон ПВХ Salamander у центральній та південній Румунії, з експортом по всій Європі.'
         : 'Active in PVC and Aluminium carpentry supply and installation since 2005. We became a notable Salamander PVC carpentry supplier in central and southern Romania, with quality standards guaranteeing exports of up to 30-40% reaching most European countries.',
-      img: '/images/TAMPLARIE_Aluminiu_si_TERMOPANE_PVC.avif',
+      img: '/images/NEOFORT_SISTEME_DE_TAMPLARIE_PVC___ALUMINIU.avif',
       imgAlt: isRo ? 'NEOFORT tamplarie aluminiu termopane PVC' : 'NEOFORT aluminium PVC double glazing',
       width: 307,
     },
