@@ -90,7 +90,7 @@ export default async function ContactPage({ params }) {
           {introText}
         </p>
         <p style={{ fontFamily: F, fontSize: 14, fontWeight: 300, color: '#1a1a1a' }}>
-          <a href="tel:+40215280660" style={{ color: '#1a1a1a', textDecoration: 'none' }}>+4021528060</a>
+          <a href="tel:+40215280660" style={{ color: '#1a1a1a', textDecoration: 'none' }}>+40215280660</a>
           {'    '}
           <a href="tel:+40215280661" style={{ color: '#1a1a1a', textDecoration: 'none' }}>+40215280661</a>
         </p>
@@ -132,7 +132,6 @@ export default async function ContactPage({ params }) {
         <h2 style={{ fontFamily: F, fontSize: 18, fontWeight: 200, color: '#1a1a1a', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 24 }}>
           {isRo ? 'TRIMITE UN MESAJ' : isUk ? 'НАДІСЛАТИ ПОВІДОМЛЕННЯ' : 'SEND A MESSAGE'}
         </h2>
-        <p style={{ fontFamily: F, fontSize: 13, fontWeight: 300, color: '#1a1a1a', marginBottom: 30 }}>{addressText}</p>
         <ContactForm locale={locale} />
       </div>
 
