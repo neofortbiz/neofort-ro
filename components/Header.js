@@ -35,7 +35,7 @@ export default function Header({ locale }) {
         {/* Logo */}
         <Link href="/" locale={locale} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <Image
-            src="/images/logo-neofort.jpg"
+            src="/images/Neofort.avif"
             alt="NEOFORT"
             width={64}
             height={64}
