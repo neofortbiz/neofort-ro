@@ -9,7 +9,7 @@ import Script from 'next/script';
 import '../globals.css';
 
 const BASE = 'https://www.neofort.ro';
-const GA_ID = 'G-20PR5SV2XC';
+const GA_ID = 'G-S1SVYDK27J';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
