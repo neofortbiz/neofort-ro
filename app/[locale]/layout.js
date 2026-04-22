@@ -5,9 +5,11 @@ import { routing } from '../../i18n/routing';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import CookieConsent from '../../components/CookieConsent';
+import Script from 'next/script';
 import '../globals.css';
 
 const BASE = 'https://www.neofort.ro';
+const GA_ID = 'G-20PR5SV2XC';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -26,8 +28,12 @@ export async function generateMetadata({ params }) {
       languages: {
         ro: `${BASE}/ro`,
         en: `${BASE}/en`,
+        uk: `${BASE}/uk`,
         'x-default': `${BASE}/ro`,
       },
+    },
+    verification: {
+      google: 'bqnszef5_rtW9qz8fkuWCH-oO2n2_Eu4ETknIvZmBkA',
     },
     robots: { index: true, follow: true },
   };
@@ -45,6 +51,13 @@ export default async function LocaleLayout({ children, params }) {
   return (
     <html lang={locale}>
       <body style={{ overflowX: 'hidden', maxWidth: '100vw' }}>
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+        <Script id="ga4-init" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_ID}');
+        `}</Script>
         <NextIntlClientProvider messages={messages}>
           <Header locale={locale} />
           <main>{children}</main>
