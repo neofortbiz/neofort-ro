@@ -1,123 +1,88 @@
 'use client';
-import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
+const F = "'Helvetica Neue', Helvetica, Arial, sans-serif";
+
+const field = {
+  width: '100%',
+  padding: '12px 8px',
+  fontFamily: F,
+  fontSize: 14,
+  fontWeight: 300,
+  color: '#1a1a1a',
+  background: 'transparent',
+  border: 'none',
+  borderBottom: '1px solid #999',
+  outline: 'none',
+  boxSizing: 'border-box',
+  display: 'block',
+  marginBottom: 8,
+};
+
 export default function ContactForm({ locale }) {
-  const t = useTranslations('contact');
-  const [sent, setSent] = useState(false);
-  const [form, setForm] = useState({ nume: '', email: '', tel: '', subiect: '', mesaj: '', gdpr: false });
+  const isRo = locale === 'ro';
+  const [status, setStatus] = useState(null);
 
-  function handleChange(e) {
-    const { name, value, type, checked } = e.target;
-    setForm(f => ({ ...f, [name]: type === 'checkbox' ? checked : value }));
-  }
-
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    setSent(true);
-  }
-
-  const inputStyle = {
-    width: '100%',
-    padding: '10px 12px',
-    border: '0 0 1px 0',
-    borderBottom: '1px solid #1a1a1a',
-    background: 'transparent',
-    fontFamily: 'avenir-lt-w01_35-light1475496, sans-serif',
-    fontSize: 15,
-    color: '#1a1a1a',
-    outline: 'none',
-    marginBottom: 12,
-  };
-
-  if (sent) {
-    return (
-      <div style={{ textAlign: 'center', padding: '40px 20px' }}>
-        <p style={{ fontFamily: 'avenir-lt-w01_35-light1475496, sans-serif', fontSize: 18, color: '#1a1a1a' }}>
-          {t('form_success')}
-        </p>
-      </div>
-    );
+    setStatus('sending');
+    const data = Object.fromEntries(new FormData(e.target));
+    try {
+      const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) { setStatus('ok'); e.target.reset(); }
+      else setStatus('err');
+    } catch { setStatus('err'); }
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-      <input
-        type="text"
-        name="nume"
-        placeholder={t('form_nume')}
-        value={form.nume}
-        onChange={handleChange}
-        required
-        maxLength={100}
-        style={inputStyle}
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder={t('form_email')}
-        value={form.email}
-        onChange={handleChange}
-        required
-        maxLength={250}
-        style={inputStyle}
-      />
-      <input
-        type="text"
-        name="tel"
-        placeholder={t('form_tel')}
-        value={form.tel}
-        onChange={handleChange}
-        required
-        maxLength={50}
-        style={inputStyle}
-      />
-      <input
-        type="text"
-        name="subiect"
-        placeholder={t('form_subiect')}
-        value={form.subiect}
-        onChange={handleChange}
-        maxLength={200}
-        style={inputStyle}
-      />
+    <form onSubmit={handleSubmit}>
+      <input name="nume"    type="text"  required placeholder={isRo ? 'Nume'    : 'Name'}    style={field} />
+      <input name="email"   type="email" required placeholder="Email"                         style={field} />
+      <input name="telefon" type="tel"            placeholder={isRo ? 'Telefon' : 'Phone'}   style={field} />
+      <input name="subiect" type="text"            placeholder={isRo ? 'Subiect' : 'Subject'} style={field} />
       <textarea
         name="mesaj"
-        placeholder={t('form_mesaj')}
-        value={form.mesaj}
-        onChange={handleChange}
+        required
         rows={5}
-        style={{ ...inputStyle, resize: 'none', paddingTop: 10 }}
+        placeholder={isRo ? 'Mesaj' : 'Message'}
+        style={{ ...field, resize: 'vertical', marginBottom: 20 }}
       />
-      <label style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16, cursor: 'pointer' }}>
-        <input
-          type="checkbox"
-          name="gdpr"
-          checked={form.gdpr}
-          onChange={handleChange}
-          required
-          style={{ width: 18, height: 18 }}
-        />
-        <span style={{ fontFamily: 'avenir-lt-w01_35-light1475496, sans-serif', fontSize: 14, color: '#1a1a1a' }}>
-          {t('form_gdpr')}
-        </span>
-      </label>
+
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
+        <input type="checkbox" name="gdpr" required id="gdpr" />
+        <label htmlFor="gdpr" style={{ fontFamily: F, fontSize: 13, fontWeight: 300, color: '#1a1a1a', cursor: 'pointer' }}>
+          {isRo ? 'Sunt de acord cu Politica GDPR' : 'I agree with the Privacy Policy'}
+        </label>
+      </div>
+
       <button
         type="submit"
+        disabled={status === 'sending'}
         style={{
+          display: 'block',
           width: '100%',
-          padding: '14px',
+          padding: '15px',
           background: '#1a1a1a',
           color: '#fff',
+          fontFamily: F,
+          fontSize: 14,
+          fontWeight: 300,
+          letterSpacing: '0.1em',
           border: 'none',
-          fontFamily: 'avenir-lt-w01_35-light1475496, sans-serif',
-          fontSize: 17,
-          cursor: 'pointer',
-          letterSpacing: '0.03em',
+          borderRadius: 0,
+          cursor: status === 'sending' ? 'wait' : 'pointer',
+          opacity: status === 'sending' ? 0.6 : 1,
         }}
       >
-        {t('form_btn')}
+        {status === 'sending' ? '...' : (isRo ? 'Transmis' : 'Send')}
       </button>
+
+      {status === 'ok' && <p style={{ fontFamily: F, fontSize: 13, color: '#2a7a2a', marginTop: 12 }}>{isRo ? 'Mesaj trimis cu succes.' : 'Message sent successfully.'}</p>}
+      {status === 'err' && <p style={{ fontFamily: F, fontSize: 13, color: '#c00', marginTop: 12 }}>{isRo ? 'Eroare. Scrieti la office@neofort.ro' : 'Error. Write to office@neofort.ro'}</p>}
     </form>
   );
 }
