@@ -162,7 +162,7 @@ export default async function HomePage({ params }) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <section style={{ position: 'relative', minHeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <section className="hero-section" style={{ position: 'relative', minHeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <Image
           src="/images/hero.avif"
           alt={isRo ? 'NEOFORT ansambluri rezidentiale Bucuresti' : 'NEOFORT residential complexes Bucharest'}
@@ -173,14 +173,14 @@ export default async function HomePage({ params }) {
           style={{ objectFit: 'cover', objectPosition: 'center' }}
         />
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.52)' }} />
-        <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', padding: '60px 20px', maxWidth: 860 }}>
-          <h1 style={{ fontFamily: F, fontSize: 'clamp(36px, 12vw, 72px)', fontWeight: 300, color: '#fff', letterSpacing: '0.12em', lineHeight: 1.2, marginBottom: 16 }}>
+        <div className="hero-content" style={{ position: 'relative', zIndex: 1, textAlign: 'center', padding: '60px 20px', maxWidth: 860, width: '100%' }}>
+          <h1 className="hero-title" style={{ fontFamily: F, fontWeight: 300, color: '#fff', letterSpacing: '0.12em', lineHeight: 1.2, marginBottom: 16 }}>
             NEOFORT
           </h1>
-          <p style={{ fontFamily: F, fontSize: 20, fontWeight: 300, color: '#fff', letterSpacing: '0.05em', marginBottom: 28 }}>
+          <p className="hero-subtitle" style={{ fontFamily: F, fontWeight: 300, color: '#fff', letterSpacing: '0.05em', marginBottom: 28 }}>
             {t('hero_subtitle')}
           </p>
-          <p style={{ fontFamily: F, fontSize: 16, fontWeight: 300, color: 'rgba(255,255,255,0.9)', lineHeight: 1.8, maxWidth: 760, margin: '0 auto' }}>
+          <p className="hero-text" style={{ fontFamily: F, fontWeight: 300, color: 'rgba(255,255,255,0.9)', lineHeight: 1.8, maxWidth: 760, margin: '0 auto' }}>
             {t('hero_text')}
           </p>
         </div>
@@ -199,10 +199,10 @@ export default async function HomePage({ params }) {
                 style={{ objectFit: 'cover' }}
               />
             </div>
-            <h2 id={`section-${i}`} style={{ fontFamily: F, fontSize: 32, fontWeight: 300, color: '#1a1a1a', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 16 }}>
+            <h2 id={`section-${i}`} className="section-title" style={{ fontFamily: F, fontWeight: 300, color: '#1a1a1a', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 16 }}>
               {item.title}
             </h2>
-            <p style={{ fontFamily: F, fontSize: 17, fontWeight: 300, color: '#4a4a4a', lineHeight: 1.75, marginBottom: 24, maxWidth: 760 }}>
+            <p className="section-text" style={{ fontFamily: F, fontWeight: 300, color: '#4a4a4a', lineHeight: 1.75, marginBottom: 24, maxWidth: 760 }}>
               {item.text}
             </p>
             <a
