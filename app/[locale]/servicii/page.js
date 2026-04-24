@@ -67,10 +67,10 @@ export default async function ServiciiPage({ params }) {
   return (
     <>
       <section style={{ background: '#fff', padding: '60px 20px 40px', textAlign: 'center' }}>
-        <h1 style={{ fontFamily: F, fontSize: 22, fontWeight: 200, color: '#1a1a1a', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 32, textAlign: 'center' }}>
+        <h1 style={{ fontFamily: F, fontSize: 22, fontWeight: 200, color: '#1a1a1a', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 32 }}>
           {heading}
         </h1>
-        <div style={{ maxWidth: 820, margin: '0 auto', fontFamily: F, fontSize: 14, fontWeight: 300, color: '#1a1a1a', lineHeight: 2, textAlign: 'justify' }}>
+        <div style={{ maxWidth: 820, margin: '0 auto', fontFamily: F, fontSize: 14, fontWeight: 300, color: '#1a1a1a', lineHeight: 2, textAlign: 'center' }}>
           {isRo ? (<>Oferim <strong style={{ fontWeight: 600 }}>consultanta imobiliara</strong> in vederea vanzarii de apartamente in ansambluri rezidentiale proprii cat si de la parteneri. Asiguram <strong style={{ fontWeight: 600 }}>studii de fezabilitate</strong> si servicii de <strong style={{ fontWeight: 600 }}>constructie si proiectare</strong> pentru dezvoltatori si investitori. Oferim <strong style={{ fontWeight: 600 }}>servicii de crowdfunding</strong>, precum si <strong style={{ fontWeight: 600 }}>consultanta pentru finantare</strong> bancara si nebancara. Avem o mare acoperire zonala in furnizarea <a href="https://www.neofort-biz.ro/ro" target="_blank" rel="noopener noreferrer" style={{ color: '#1a1a1a', fontWeight: 600 }}>sistemelor de tamplarie aluminiu si termopane PVC</a>.</>) : isUk ? (<>Пропонуємо <strong style={{ fontWeight: 600 }}>консультації з нерухомості</strong>, <strong style={{ fontWeight: 600 }}>техніко-економічні обґрунтування</strong>, послуги <strong style={{ fontWeight: 600 }}>будівництва та проектування</strong>, <strong style={{ fontWeight: 600 }}>краудфандинг</strong>, <strong style={{ fontWeight: 600 }}>фінансові консультації</strong> та <a href="https://www.neofort-biz.ro/ro" target="_blank" rel="noopener noreferrer" style={{ color: '#1a1a1a', fontWeight: 600 }}>системи вікон ПВХ та алюміній</a>.</>) : (<>We offer <strong style={{ fontWeight: 600 }}>real estate consultancy</strong>, <strong style={{ fontWeight: 600 }}>feasibility studies</strong>, <strong style={{ fontWeight: 600 }}>construction & design</strong>, <strong style={{ fontWeight: 600 }}>crowdfunding</strong>, <strong style={{ fontWeight: 600 }}>financing consultancy</strong> and <a href="https://www.neofort-biz.ro/ro" target="_blank" rel="noopener noreferrer" style={{ color: '#1a1a1a', fontWeight: 600 }}>PVC and aluminium carpentry systems</a>.</>)}
         </div>
       </section>
@@ -94,7 +94,7 @@ export default async function ServiciiPage({ params }) {
               </div>
               {/* Text pe fond alb dedesubt */}
               <div style={{ background: '#fff', padding: '20px 20px 24px' }}>
-                <h2 style={{ fontFamily: F, fontSize: 16, fontWeight: 500, color: '#1a1a1a', letterSpacing: '0.08em', marginBottom: 6, textAlign: 'center' }}>
+                <h2 style={{ fontFamily: F, fontSize: 16, fontWeight: 600, color: '#1a1a1a', letterSpacing: '0.06em', marginBottom: 6 }}>
                   {service.title}
                 </h2>
                 <p style={{ fontFamily: F, fontSize: 13, fontWeight: 400, color: '#555', lineHeight: 1.5, marginBottom: 8, fontStyle: 'italic' }}>
