@@ -87,7 +87,8 @@ export default async function ServiciiPage({ params }) {
             min-height: calc(2/4.7 * 100vw * 1.1) !important;
           }
           .servicii-text {
-            top: 30% !important;
+            top: 15% !important;
+            padding: 0 36px 48px !important;
           }
         }
       `}</style>
