@@ -67,7 +67,7 @@ export default async function ServiciiPage({ params }) {
   return (
     <>
       <section style={{ background: '#fff', padding: '60px 20px 40px', textAlign: 'center' }}>
-        <h1 style={{ fontFamily: F, fontSize: 22, fontWeight: 200, color: '#1a1a1a', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 32 }}>
+        <h1 style={{ fontFamily: F, fontSize: 22, fontWeight: 200, color: '#1a1a1a', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 32, textAlign: 'center' }}>
           {heading}
         </h1>
         <div style={{ maxWidth: 820, margin: '0 auto', fontFamily: F, fontSize: 14, fontWeight: 300, color: '#1a1a1a', lineHeight: 2, textAlign: 'center' }}>
