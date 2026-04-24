@@ -98,7 +98,7 @@ export default async function ServiciiPage({ params }) {
               {/* Gradient inchis peste imagine pentru lizibilitate */}
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.55) 33%, rgba(0,0,0,0.75) 100%)' }} />
               {/* Text alb peste imagine — incepe din prima treime */}
-              <div style={{ position: 'absolute', top: '28%', left: 0, right: 0, bottom: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', gap: 10, padding: '0 112px 144px' }}>
+              <div style={{ position: 'absolute', top: '28%', left: 0, right: 0, bottom: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', gap: 10, padding: '0 36px 48px' }}>
                 <h2 style={{ fontFamily: F, fontSize: 16, fontWeight: 600, color: '#fff', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                   {service.title}
                 </h2>
