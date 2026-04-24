@@ -99,13 +99,13 @@ export default async function ServiciiPage({ params }) {
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.55) 33%, rgba(0,0,0,0.75) 100%)' }} />
               {/* Text alb peste imagine — incepe din prima treime */}
               <div style={{ position: 'absolute', top: '28%', left: 0, right: 0, bottom: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', gap: 10, padding: '0 36px 48px' }}>
-                <h2 style={{ fontFamily: F, fontSize: 16, fontWeight: 600, color: '#fff', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                <h2 style={{ fontFamily: F, fontSize: 20, fontWeight: 600, color: '#fff', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                   {service.title}
                 </h2>
-                <p style={{ fontFamily: F, fontSize: 13, fontWeight: 400, color: 'rgba(255,255,255,0.85)', lineHeight: 1.6, fontStyle: 'italic' }}>
+                <p style={{ fontFamily: F, fontSize: 16, fontWeight: 400, color: 'rgba(255,255,255,0.85)', lineHeight: 1.6, fontStyle: 'italic' }}>
                   {service.subtitle}
                 </p>
-                <p style={{ fontFamily: F, fontSize: 13, fontWeight: 300, color: 'rgba(255,255,255,0.80)', lineHeight: 1.7 }}>
+                <p style={{ fontFamily: F, fontSize: 16, fontWeight: 300, color: 'rgba(255,255,255,0.80)', lineHeight: 1.7 }}>
                   {service.text}
                 </p>
               </div>
