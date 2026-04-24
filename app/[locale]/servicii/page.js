@@ -96,16 +96,16 @@ export default async function ServiciiPage({ params }) {
                 style={{ objectFit: 'cover' }}
               />
               {/* Gradient inchis peste imagine pentru lizibilitate */}
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.65) 100%)' }} />
-              {/* Text alb peste imagine */}
-              <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '20px 16px 24px' }}>
-                <h2 style={{ fontFamily: F, fontSize: 13, fontWeight: 600, color: '#fff', letterSpacing: '0.08em', marginBottom: 6, textTransform: 'uppercase' }}>
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.55) 33%, rgba(0,0,0,0.75) 100%)' }} />
+              {/* Text alb peste imagine — incepe din prima treime */}
+              <div style={{ position: 'absolute', top: '33%', left: 0, right: 0, bottom: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', padding: '0 24px 32px' }}>
+                <h2 style={{ fontFamily: F, fontSize: 16, fontWeight: 600, color: '#fff', letterSpacing: '0.08em', marginBottom: 10, textTransform: 'uppercase' }}>
                   {service.title}
                 </h2>
-                <p style={{ fontFamily: F, fontSize: 11, fontWeight: 400, color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, marginBottom: 8, fontStyle: 'italic' }}>
+                <p style={{ fontFamily: F, fontSize: 13, fontWeight: 400, color: 'rgba(255,255,255,0.85)', lineHeight: 1.6, marginBottom: 12, fontStyle: 'italic' }}>
                   {service.subtitle}
                 </p>
-                <p style={{ fontFamily: F, fontSize: 11, fontWeight: 300, color: 'rgba(255,255,255,0.80)', lineHeight: 1.65 }}>
+                <p style={{ fontFamily: F, fontSize: 13, fontWeight: 300, color: 'rgba(255,255,255,0.80)', lineHeight: 1.7 }}>
                   {service.text}
                 </p>
               </div>
