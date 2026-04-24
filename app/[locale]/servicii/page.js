@@ -76,77 +76,54 @@ export default async function ServiciiPage({ params }) {
         </div>
       </section>
 
+      {/* Responsive grid */}
       <style>{`
-        /* Desktop: 3 coloane, carduri portrait cu aspect ratio fix */
-        .servicii-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 16px;
-          max-width: 980px;
-          margin: 0 auto;
-        }
-        .servicii-card {
-          position: relative;
-          border-radius: 4px;
-          overflow: hidden;
-          aspect-ratio: 2/4.7;
-        }
-        .servicii-text {
-          position: absolute;
-          top: 28%;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          gap: 10px;
-          padding: 0 36px 48px;
-        }
-        /* Mobil: 1 coloana, card cu inaltime auto bazata pe continut */
         @media (max-width: 767px) {
           .servicii-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr !important;
           }
           .servicii-card {
-            aspect-ratio: unset;
-            min-height: 260px;
-            padding-top: 52%;
+            aspect-ratio: unset !important;
+            min-height: calc(2/4.7 * 100vw * 1.1) !important;
           }
           .servicii-text {
-            position: relative;
-            top: auto;
-            left: auto;
-            right: auto;
-            bottom: auto;
-            padding: 24px 28px 32px;
-            background: rgba(0,0,0,0.55);
+            top: 30% !important;
           }
         }
       `}</style>
 
-      {/* Grid carduri */}
+      {/* Grid 3x2 carduri portrait cu text alb peste imagine */}
       <section style={{ background: '#f7f7f5', padding: '30px 20px 40px' }}>
-        <div className="servicii-grid">
+        <div style={{
+          maxWidth: 980,
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: 16,
+        }}
+          className="servicii-grid"
+        >
           {servicii.map((service, i) => (
-            <div key={i} className="servicii-card">
+            <div key={i} className="servicii-card" style={{ position: 'relative', borderRadius: 4, overflow: 'hidden', aspectRatio: '2/4.7' }}>
               <Image
                 src={service.img}
                 alt={service.title}
                 fill
                 loading={i < 3 ? 'eager' : 'lazy'}
-                sizes="(max-width: 767px) 100vw, 320px"
+                sizes="(max-width: 768px) 100vw, 320px"
                 style={{ objectFit: 'cover' }}
               />
+              {/* Gradient inchis peste imagine pentru lizibilitate */}
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.55) 33%, rgba(0,0,0,0.75) 100%)' }} />
-              <div className="servicii-text">
-                <h2 style={{ fontFamily: F, fontSize: 20, fontWeight: 600, color: '#fff', letterSpacing: '0.08em', textTransform: 'uppercase', margin: 0 }}>
+              {/* Text alb peste imagine — incepe din prima treime */}
+              <div className="servicii-text" style={{ position: 'absolute', top: '28%', left: 0, right: 0, bottom: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', gap: 10, padding: '0 36px 48px' }}>
+                <h2 style={{ fontFamily: F, fontSize: 20, fontWeight: 600, color: '#fff', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                   {service.title}
                 </h2>
-                <p style={{ fontFamily: F, fontSize: 16, fontWeight: 400, color: 'rgba(255,255,255,0.85)', lineHeight: 1.6, fontStyle: 'italic', margin: 0 }}>
+                <p style={{ fontFamily: F, fontSize: 16, fontWeight: 400, color: 'rgba(255,255,255,0.85)', lineHeight: 1.6, fontStyle: 'italic' }}>
                   {service.subtitle}
                 </p>
-                <p style={{ fontFamily: F, fontSize: 16, fontWeight: 300, color: 'rgba(255,255,255,0.80)', lineHeight: 1.7, margin: 0 }}>
+                <p style={{ fontFamily: F, fontSize: 16, fontWeight: 300, color: 'rgba(255,255,255,0.80)', lineHeight: 1.7 }}>
                   {service.text}
                 </p>
               </div>
