@@ -76,6 +76,22 @@ export default async function ServiciiPage({ params }) {
         </div>
       </section>
 
+      {/* Responsive grid */}
+      <style>{`
+        @media (max-width: 767px) {
+          .servicii-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .servicii-card {
+            aspect-ratio: 16/9 !important;
+          }
+          .servicii-text {
+            top: 20% !important;
+            padding: 0 28px 32px !important;
+          }
+        }
+      `}</style>
+
       {/* Grid 3x2 carduri portrait cu text alb peste imagine */}
       <section style={{ background: '#f7f7f5', padding: '30px 20px 40px' }}>
         <div style={{
@@ -84,9 +100,11 @@ export default async function ServiciiPage({ params }) {
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
           gap: 16,
-        }}>
+        }}
+          className="servicii-grid"
+        >
           {servicii.map((service, i) => (
-            <div key={i} style={{ position: 'relative', borderRadius: 4, overflow: 'hidden', aspectRatio: '2/4.7' }}>
+            <div key={i} className="servicii-card" style={{ position: 'relative', borderRadius: 4, overflow: 'hidden', aspectRatio: '2/4.7' }}>
               <Image
                 src={service.img}
                 alt={service.title}
@@ -98,7 +116,7 @@ export default async function ServiciiPage({ params }) {
               {/* Gradient inchis peste imagine pentru lizibilitate */}
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.55) 33%, rgba(0,0,0,0.75) 100%)' }} />
               {/* Text alb peste imagine — incepe din prima treime */}
-              <div style={{ position: 'absolute', top: '28%', left: 0, right: 0, bottom: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', gap: 10, padding: '0 36px 48px' }}>
+              <div className="servicii-text" style={{ position: 'absolute', top: '28%', left: 0, right: 0, bottom: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', gap: 10, padding: '0 36px 48px' }}>
                 <h2 style={{ fontFamily: F, fontSize: 20, fontWeight: 600, color: '#fff', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                   {service.title}
                 </h2>
