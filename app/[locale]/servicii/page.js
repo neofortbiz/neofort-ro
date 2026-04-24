@@ -66,6 +66,7 @@ export default async function ServiciiPage({ params }) {
 
   return (
     <>
+      {/* Titlu + descriere intro — centrate, uniforme */}
       <section style={{ background: '#fff', padding: '60px 20px 40px', textAlign: 'center' }}>
         <h1 style={{ fontFamily: F, fontSize: 22, fontWeight: 200, color: '#1a1a1a', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 32, textAlign: 'center' }}>
           {heading}
@@ -75,32 +76,36 @@ export default async function ServiciiPage({ params }) {
         </div>
       </section>
 
-      <section style={{ background: '#f7f7f5', padding: '30px 20px 30px' }}>
-        <div style={{ maxWidth: 980, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 24 }}>
+      {/* Grid 3x2 carduri portrait cu text alb peste imagine */}
+      <section style={{ background: '#f7f7f5', padding: '30px 20px 40px' }}>
+        <div style={{
+          maxWidth: 980,
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: 16,
+        }}>
           {servicii.map((service, i) => (
-            <div key={i} style={{ borderRadius: 4, overflow: 'hidden', background: '#000' }}>
-              {/* Imagine clara cu gradient subtil doar jos */}
-              <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9' }}>
-                <Image
-                  src={service.img}
-                  alt={service.title}
-                  fill
-                  loading={i < 2 ? 'eager' : 'lazy'}
-                  sizes="(max-width: 768px) 100vw, 980px"
-                  style={{ objectFit: 'cover', opacity: 0.92 }}
-                />
-                {/* Gradient subtil doar la baza imaginii */}
-                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '40%', background: 'linear-gradient(to bottom, transparent, rgba(0,0,0,0.55))' }} />
-              </div>
-              {/* Text pe fond alb dedesubt */}
-              <div style={{ background: '#fff', padding: '20px 20px 24px' }}>
-                <h2 style={{ fontFamily: F, fontSize: 16, fontWeight: 600, color: '#1a1a1a', letterSpacing: '0.06em', marginBottom: 6 }}>
+            <div key={i} style={{ position: 'relative', borderRadius: 4, overflow: 'hidden', aspectRatio: '2/7' }}>
+              <Image
+                src={service.img}
+                alt={service.title}
+                fill
+                loading={i < 3 ? 'eager' : 'lazy'}
+                sizes="(max-width: 768px) 100vw, 320px"
+                style={{ objectFit: 'cover' }}
+              />
+              {/* Gradient inchis peste imagine pentru lizibilitate */}
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.65) 100%)' }} />
+              {/* Text alb peste imagine */}
+              <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '20px 16px 24px' }}>
+                <h2 style={{ fontFamily: F, fontSize: 13, fontWeight: 600, color: '#fff', letterSpacing: '0.08em', marginBottom: 6, textTransform: 'uppercase' }}>
                   {service.title}
                 </h2>
-                <p style={{ fontFamily: F, fontSize: 13, fontWeight: 400, color: '#555', lineHeight: 1.5, marginBottom: 8, fontStyle: 'italic' }}>
+                <p style={{ fontFamily: F, fontSize: 11, fontWeight: 400, color: 'rgba(255,255,255,0.85)', lineHeight: 1.5, marginBottom: 8, fontStyle: 'italic' }}>
                   {service.subtitle}
                 </p>
-                <p style={{ fontFamily: F, fontSize: 14, fontWeight: 300, color: '#333', lineHeight: 1.75, textAlign: 'justify' }}>
+                <p style={{ fontFamily: F, fontSize: 11, fontWeight: 300, color: 'rgba(255,255,255,0.80)', lineHeight: 1.65 }}>
                   {service.text}
                 </p>
               </div>
