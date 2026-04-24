@@ -83,13 +83,13 @@ export default async function ContactPage({ params }) {
 
       {/* Titlu + intro centrat */}
       <div style={{ maxWidth: 980, margin: '0 auto', padding: '80px 20px 60px', textAlign: 'center' }}>
-        <h1 style={{ fontFamily: F, fontSize: 22, fontWeight: 200, color: '#1a1a1a', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 30, textAlign: 'center' }}>
+        <h1 style={{ fontFamily: F, fontSize: 20, fontWeight: 300, color: '#1a1a1a', letterSpacing: '0.08em', marginBottom: 30 }}>
           {titleMain}
         </h1>
-        <p style={{ fontFamily: F, fontSize: 14, fontWeight: 300, color: '#1a1a1a', lineHeight: 1.9, maxWidth: 860, margin: '0 auto 16px', textAlign: 'center' }}>
+        <p style={{ fontFamily: F, fontSize: 14, fontWeight: 300, color: '#1a1a1a', lineHeight: 1.9, maxWidth: 860, margin: '0 auto 16px', textAlign: 'justify' }}>
           {introText}
         </p>
-        <p style={{ fontFamily: F, fontSize: 14, fontWeight: 300, color: '#1a1a1a' }}>
+        <p style={{ fontFamily: F, fontSize: 14, fontWeight: 300, color: '#1a1a1a', textAlign: 'center' }}>
           <a href="tel:+40215280660" style={{ color: '#1a1a1a', textDecoration: 'none' }}>+40215280660</a>
           {'    '}
           <a href="tel:+40215280661" style={{ color: '#1a1a1a', textDecoration: 'none' }}>+40215280661</a>
