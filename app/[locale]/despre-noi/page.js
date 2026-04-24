@@ -56,7 +56,7 @@ export default async function DesprePage({ params }) {
   return (
     <>
       <section style={{ background: '#f7f7f5', padding: '80px 20px 60px', textAlign: 'center' }}>
-        <h1 style={{ fontFamily: F, fontSize: 28, fontWeight: 200, color: '#1a1a1a', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 24 }}>
+        <h1 style={{ fontFamily: F, fontSize: 22, fontWeight: 200, color: '#1a1a1a', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 24, textAlign: 'center' }}>
           {title}
         </h1>
         <p style={{ fontFamily: F, fontSize: 16, fontWeight: 300, color: '#4a4a4a', lineHeight: 1.9, maxWidth: 780, margin: '0 auto', textAlign: 'justify' }}>
@@ -68,7 +68,7 @@ export default async function DesprePage({ params }) {
         <div style={{ maxWidth: 780, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 56 }}>
           {entitati.map((e, i) => (
             <div key={i} style={{ textAlign: 'center' }}>
-              <h2 style={{ fontFamily: F, fontSize: 22, fontWeight: 300, color: '#1a1a1a', letterSpacing: '0.08em', marginBottom: 4 }}>
+              <h2 style={{ fontFamily: F, fontSize: 16, fontWeight: 500, color: '#1a1a1a', letterSpacing: '0.08em', marginBottom: 4, textAlign: 'center' }}>
                 {e.name}
               </h2>
               <p style={{ fontFamily: F, fontSize: 12, fontWeight: 300, color: '#999', letterSpacing: '0.05em', marginBottom: 16 }}>

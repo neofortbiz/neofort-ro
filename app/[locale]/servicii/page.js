@@ -67,7 +67,7 @@ export default async function ServiciiPage({ params }) {
   return (
     <>
       <section style={{ background: '#fff', padding: '60px 20px 40px', textAlign: 'center' }}>
-        <h1 style={{ fontFamily: F, fontSize: 22, fontWeight: 200, color: '#1a1a1a', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 32 }}>
+        <h1 style={{ fontFamily: F, fontSize: 22, fontWeight: 200, color: '#1a1a1a', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 32, textAlign: 'center' }}>
           {heading}
         </h1>
         <div style={{ maxWidth: 820, margin: '0 auto', fontFamily: F, fontSize: 14, fontWeight: 300, color: '#1a1a1a', lineHeight: 2, textAlign: 'justify' }}>
@@ -94,7 +94,7 @@ export default async function ServiciiPage({ params }) {
               </div>
               {/* Text pe fond alb dedesubt */}
               <div style={{ background: '#fff', padding: '20px 20px 24px' }}>
-                <h2 style={{ fontFamily: F, fontSize: 16, fontWeight: 600, color: '#1a1a1a', letterSpacing: '0.06em', marginBottom: 6 }}>
+                <h2 style={{ fontFamily: F, fontSize: 16, fontWeight: 500, color: '#1a1a1a', letterSpacing: '0.08em', marginBottom: 6, textAlign: 'center' }}>
                   {service.title}
                 </h2>
                 <p style={{ fontFamily: F, fontSize: 13, fontWeight: 400, color: '#555', lineHeight: 1.5, marginBottom: 8, fontStyle: 'italic' }}>
